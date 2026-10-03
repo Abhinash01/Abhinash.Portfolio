@@ -9,7 +9,8 @@
 ## 1. Visual Sitemap Tree & Route Hierarchy
 
 ```
-https://abhinashgupta.dev
+[PROPOSED CANONICAL DOMAIN: https://abhinashgupta.dev/ — pending confirmation]
+(Domain-independent root-relative structure)
 │
 ├── / (Root Homepage)
 │     ├── #preloader (Asset & Shader Hydration Curtain)
@@ -20,7 +21,7 @@ https://abhinashgupta.dev
 │     ├── #about-preview (Personal Background & Design Philosophy)
 │     ├── #journey (Education, Foundations & Milestones)
 │     ├── #contact-cta (High-Impact Collaboration Trigger)
-│     └── #global-footer (Global Navigation, Telemetry & Timezone)
+│     └── #global-footer (Global Navigation, Telemetry Concept & Timezone)
 │
 ├── /projects (All-Projects Archive & Filterable Catalog)
 │     ├── /projects/weathersentinel
@@ -36,9 +37,9 @@ https://abhinashgupta.dev
 │     └── #setup (Hardware, Editor & Productivity Tooling)
 │
 ├── /contact (Dedicated Collaboration & Inquiries Portal)
-│     ├── #form (Interactive Inquiry Form)
-│     ├── #direct-channels (Direct Email, LinkedIn, GitHub)
-│     └── #availability (Current Working Status & Location)
+│     ├── #form (Interactive Inquiry Form [Planned Backend Service])
+│     ├── #direct-channels (Direct Email, GitHub, LinkedIn [Unconfirmed URLs Flagged])
+│     └── #availability (Configurable Working Status & Location)
 │
 └── /* (404 Error State & Fallback Navigation)
 ```
@@ -56,7 +57,7 @@ https://abhinashgupta.dev
 | `/projects/:slug` | Deep-Dive Case Studies | 5 dedicated pages for in-depth technical analysis: architecture diagrams, schemas, implemented features, challenges, and trade-offs. | **Essential** |
 | `/about` | Long-form Editorial | Deep narrative on Abhinash's engineering background, academic roots, systems principles, and developer setup. | **Essential** |
 | `/contact` | Inquiry Hub | Dedicated standalone inquiry portal with project scoping options, direct email, and timezone clarity. | **Essential** |
-| `/resume` | Standalone Page? | **REJECTED.** A dedicated HTML resume creates content duplication with `/about`. Instead, a direct link opens `/resume.pdf` in a browser viewer or triggers download. | **Consolidated** |
+| `/resume` | Standalone Page? | **REJECTED.** A dedicated HTML resume creates content duplication with `/about`. Instead, `/resume.pdf` (`[REQUIRES USER CONFIRMATION: PDF asset to be supplied]`) is accessed directly via modal/download. | **Consolidated** |
 | `/skills` | Standalone Page? | **REJECTED.** Skills presented in isolation lack technical credibility. Technical expertise is integrated on `/` and `/about`. | **Consolidated** |
 | `/blog` | Standalone Page? | **OMITTED FOR PHASE 01–06.** Adding an empty or half-filled blog harms professional credibility. Slated for future roadmap post-launch. | **Deferred** |
 
@@ -71,7 +72,7 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 ### Section 01: Preloader Overlay
 - **Section ID:** `#preloader` (DOM: `id="preloader-overlay"`)
 - **Status:** **Essential** (Hydration gate for 3D shaders, fonts, and assets)
-- **Purpose:** Compiles WebGL shaders, validates font assets, and provides a sleek brand curtain-raiser.
+- **Purpose:** Compiles WebGL shaders, validates font assets, and provides a clean brand curtain-raiser.
 - **Main Content:** Geometric interlocking `AG` monogram, real-time 0–100% digital counter, and monospaced status ticker (`INITIALIZING_SHADERS` -> `SYSTEM_READY`).
 - **Primary CTA:** Auto-dismisses upon 100% asset hydration or manual click on `Skip Animation [Space]`.
 - **Dependencies:** WebGL context check, asset loading listener, GSAP curtain easing.
@@ -81,7 +82,7 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 ### Section 02: Hero Experience
 - **Section ID:** `#hero` (DOM: `id="hero-section"`)
 - **Status:** **Essential** (Signature visual anchor)
-- **Purpose:** Immediate visual impact establishing Abhinash as an elite creative developer who bridges systems engineering with cinematic 3D interaction.
+- **Purpose:** Immediate visual impact establishing Abhinash as a serious creative developer who bridges systems engineering with cinematic 3D interaction.
 - **Main Content:**
   - Status Eyebrow: `// CREATIVE FULL STACK DEVELOPER // 2026 EDITION`.
   - Main Display Headline: `Building Digital Experiences. Beyond the Ordinary.`
@@ -157,7 +158,7 @@ The homepage (`/`) is structured to guide visitors through a logical progression
     - *2024–Present:* Independent Full Stack & Creative Developer.
     - *2022–2024:* Computer Science & Engineering Foundations.
     - *Continuous Mastery:* Systems design, cloud architectures, advanced spatial WebGL.
-- **Primary CTA:** Inline trigger `Download Complete Resume (PDF) ↓` (`/resume.pdf`).
+- **Primary CTA:** Inline trigger `Download Complete Resume (PDF) ↓` (`/resume.pdf` — `[REQUIRES USER CONFIRMATION: PDF asset to be supplied]`).
 - **Dependencies:** Timeline hairline styling (`#E5EAF1`).
 
 ---
@@ -178,9 +179,9 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 - **Purpose:** Eliminates friction for job offers, freelance contracts, and technical discussions.
 - **Main Content:**
   - Headline: `Let's Build Something Extraordinary.`
-  - Accessible contact form: Name, Email, Project Type dropdown, Message.
-  - Direct email pill button: `contact@abhinashgupta.dev [Copy 📋]`.
-  - Availability indicator: `Currently available for select full-time and contract opportunities`.
+  - Accessible contact form: Name, Email, Project Type dropdown, Message. *(Backend service: Formspree / Resend — planned for Phase 06+).*
+  - Direct email pill button: `[REQUIRES USER CONFIRMATION: Primary Email Address] [Copy 📋]`.
+  - Availability indicator: `[Configurable State: Defaults to REQUIRES USER CONFIRMATION: Status & Visibility]`.
 - **Primary CTA:** Form submission button `Transmit Inquiry ↗`.
 - **Dependencies:** Form input validation, toast notification system.
 
@@ -192,9 +193,10 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 - **Purpose:** Persistent site closure, social links, system telemetry, and back-to-top control.
 - **Main Content:**
   - Monospaced copyright notice: `ABHINASH GUPTA © 2026 // ALL RIGHTS RESERVED`.
-  - Live local time ticker: `New Delhi (IST) [ 28.61° N, 77.20° E ]`.
+  - Location & Local time ticker: `[REQUIRES USER CONFIRMATION: Location, Timezone & Coordinates]`.
   - Secondary navigation links: `Home`, `About`, `Projects`, `Contact`.
-  - Verified social links: GitHub, LinkedIn, Twitter/X.
+  - Social channel links: GitHub (`https://github.com/Abhinash01`), LinkedIn / X (`[REQUIRES USER CONFIRMATION: Profile URLs]`).
+  - Planned Design Concept Telemetry Bar: Visual styling concept showcasing planned tech stack credits (React 18, Three.js, Tailwind CSS, Lenis); Back-to-Top magnetic button (`#btn-scroll-top`). *(Not claimed as running live telemetry prior to implementation).*
 - **Primary CTA:** Magnetic button `Back to Top ↑` (`#hero`).
 - **Dependencies:** Timezone formatter, smooth scroll trigger.
 
@@ -223,6 +225,6 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 
 ### 4.4 `/contact` — Dedicated Contact Portal
 - **Header:** `Initiate Contact // Let's Build`.
-- **Interactive Form:** Extended fields including timeline expectations and budget tiers (for consulting).
-- **Direct Channels:** Direct email, LinkedIn messaging, GitHub profile link.
-- **Timezone Widget:** Live clock indicating local time in New Delhi and current response window.
+- **Interactive Form:** Extended fields including timeline expectations and budget tiers (for consulting). *(Backend service planned for Phase 06+).*
+- **Direct Channels:** Direct email (`[REQUIRES USER CONFIRMATION]`), LinkedIn messaging (`[REQUIRES USER CONFIRMATION]`), GitHub profile link (`https://github.com/Abhinash01`).
+- **Timezone Widget:** Live clock indicating local time and response window (`[REQUIRES USER CONFIRMATION: Location & Primary Response Window]`).

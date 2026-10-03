@@ -72,7 +72,7 @@ Every project case study in the portfolio adheres to an identical **15-field sta
     "Geolocation-based automated weather detection on initial load.",
     "Unit toggle between Metric (°C) and Imperial (°F) persisted via localStorage."
   ],
-  "projectStatus": "Completed — Verified Core Functional"
+  "projectStatus": "[REQUIRES USER CONFIRMATION: e.g., Completed / Active Development / Local Showcase]"
 }
 ```
 
@@ -118,7 +118,7 @@ Every project case study in the portfolio adheres to an identical **15-field sta
     "Automated email follow-up reminder alerts based on custom timeline rules.",
     "CSV / JSON export functionality for external application auditing."
   ],
-  "projectStatus": "Completed — Verified Core Functional"
+  "projectStatus": "[REQUIRES USER CONFIRMATION: e.g., Completed / Active Development / Local Showcase]"
 }
 ```
 
@@ -162,7 +162,7 @@ Every project case study in the portfolio adheres to an identical **15-field sta
     "Digital prescription attachment upload and PDF download.",
     "Database row-level concurrency locking for high-volume booking spikes."
   ],
-  "projectStatus": "Completed — Core Functional"
+  "projectStatus": "[REQUIRES USER CONFIRMATION: e.g., Completed / Active Development / Local Showcase]"
 }
 ```
 
@@ -203,7 +203,7 @@ Every project case study in the portfolio adheres to an identical **15-field sta
     "Downloadable PDF product specification datasheets dynamically linked per machine.",
     "Interactive cylinder bore and stroke pressure calculator."
   ],
-  "projectStatus": "Client Delivered — Verified Commercial Web Platform"
+  "projectStatus": "[REQUIRES USER CONFIRMATION: e.g., Client Delivered / In Development]"
 }
 ```
 
@@ -244,7 +244,7 @@ Every project case study in the portfolio adheres to an identical **15-field sta
     "Integrated real-time calendar synchronizing available consultation slots.",
     "Searchable research paper archive with tag-based topic filtering."
   ],
-  "projectStatus": "Completed — Verified Live Web Portal"
+  "projectStatus": "[REQUIRES USER CONFIRMATION: e.g., Completed / Live Web Portal / In Development]"
 }
 ```
 

@@ -36,21 +36,21 @@ To ensure that the portfolio serves diverse stakeholders with precision, we mapp
 - **Persona Context:** Reviews 30–50 engineering profiles per day. Spends an average of **30–45 seconds** on initial profile evaluation before deciding to short-list or move on.
 - **Entry Point:** Homepage (`/`) or direct link via LinkedIn message / resume submission.
 - **Navigation Path:**
-  1. *Landing on Hero:* Observes headline (`Creative Full Stack Developer`) and instant status badge (`Available for Work`).
+  1. *Landing on Hero:* Observes headline (`Creative Full Stack Developer`) and configurable status beacon (when enabled).
   2. *Scan Navigation:* Immediately notices the prominent `Resume ↗` trigger in the top-right navigation pill.
   3. *Scroll to Professional Introduction:* Reads 2-sentence summary establishing backend resilience and modern frontend mastery.
   4. *Scan Technical Expertise Matrix (`#expertise`):* Fast-scans categorized chips (React, TypeScript, Node.js, Express, PostgreSQL, Three.js) to confirm keyword alignment.
   5. *Evaluate Featured Project:* Clicks on *CareerTrack* or *WeatherSentinel* card to verify real full-stack build experience.
-  6. *Trigger Conversion Action:* Clicks `Resume ↗` to download/view the verified PDF, then clicks `Let's Talk` to send an email inquiry.
+  6. *Trigger Conversion Action:* Clicks `Resume ↗` to view the candidate PDF (once asset is supplied), then clicks `Let's Talk` to send an inquiry.
 - **Important Decisions:**
   - *"Does this developer have genuine full-stack experience or just frontend HTML/CSS?"* (Resolved by `#expertise` matrix showing PostgreSQL, Node.js, and REST APIs).
   - *"Can I easily forward their resume to the hiring manager?"* (Resolved by instant `Resume ↗` link in the persistent header).
-- **Primary Conversion Action:** Resume download (`/resume.pdf`) and email inquiry submission (`/contact`).
+- **Primary Conversion Action:** Resume access (`/resume.pdf` — `[REQUIRES USER CONFIRMATION: PDF asset to be supplied]`) and inquiry submission (`/contact`).
 - **Possible Friction Points & Architectural Solutions:**
   - *Friction:* Slow loading 3D scene blocking content access.  
     *Solution:* Critical DOM (headers, skills, resume trigger) hydrates in `< 800ms`; 3D scene streams asynchronously.
   - *Friction:* Missing direct contact info or required phone numbers.  
-    *Solution:* Direct email address with 1-click copy button (`contact@abhinashgupta.dev`) available in header and footer.
+    *Solution:* Direct email address with 1-click copy button (`[REQUIRES USER CONFIRMATION: Primary Email]`) available in header and footer.
 
 ---
 
@@ -93,7 +93,7 @@ To ensure that the portfolio serves diverse stakeholders with precision, we mapp
   - *Friction:* Excessive technical jargon that confuses non-technical stakeholders.  
     *Solution:* Case studies provide both high-level Executive Overviews and detailed technical deep-dives.
   - *Friction:* Unclear availability or location.  
-    *Solution:* Dedicated availability beacon and live local time (`New Delhi, India (IST)`) in header and footer.
+    *Solution:* Dedicated configurable availability beacon and local time ticker (`[REQUIRES USER CONFIRMATION: Location & Timezone]`) in header and footer.
 
 ---
 
@@ -113,6 +113,8 @@ To ensure that the portfolio serves diverse stakeholders with precision, we mapp
 - **Possible Friction Points & Architectural Solutions:**
   - *Friction:* 3D canvas capturing swipe gestures and preventing document scrolling.  
     *Solution:* Canvas container has `pointer-events: none`; document touch-scroll flows naturally without gesture trapping.
+  - *Friction:* Floating bottom HUD occluding footer links, form submit buttons, or OS home indicator.  
+    *Solution:* Bottom HUD integrates `env(safe-area-inset-bottom)` padding, auto-collapses on fast downward scroll, and pages include bottom margin buffers (`mb-24`) to eliminate collision.
   - *Friction:* Tiny buttons that cause mis-taps.  
     *Solution:* All mobile interactive hit areas strictly adhere to `>= 48px × 48px`.
 
