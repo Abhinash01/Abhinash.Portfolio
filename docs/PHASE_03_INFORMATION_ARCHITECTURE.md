@@ -44,7 +44,7 @@ The global navigation system provides persistent spatial orientation across all 
      - `Work` (Links to `/projects` or smooth-scrolls to `#featured-work` when on homepage).
      - `About` (Links to `/about`).
      - `Expertise` (Smooth-scrolls to `#expertise` on homepage, or deep-links `/about#expertise`).
-     - `Contact` (Links to `/contact` or smooth-scrolls to `#contact`).
+     - `Contact` (Links to `/contact` or smooth-scrolls to `#contact-cta`).
   3. *Recruiter Fast-Lane Controls:*
      - *Availability Beacon (Configurable):* Dynamic status indicator (e.g., pulsing green dot `#059669` when active). Content state is strictly configurable via data settings; defaults to `[REQUIRES USER CONFIRMATION: Status & Visibility]` (can be configured to "Available for Select Opportunities", "Consulting Only", or toggled off).
      - *Resume Trigger:* Direct link `Resume ↗` pointing to `/resume.pdf` (`[REQUIRES USER CONFIRMATION: Resume PDF asset to be supplied and verified]`), opening in a browser viewer or download modal.

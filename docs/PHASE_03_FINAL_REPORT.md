@@ -14,37 +14,46 @@ Phase 03 established the complete structural blueprint, page hierarchy, navigati
 ### Key Accomplishments & Accuracy Corrections in Phase 03:
 1. **Sitemap & Route Rationalization:**
    - Established a lean, root-relative routing model: `/` (Home), `/projects` (Archive), `/projects/:slug` (5 Case Studies), `/about` (Extended Story), and `/contact` (Collaboration).
-   - Treated `abhinashgupta.dev` as a **proposed canonical domain** pending user ownership confirmation, keeping all URL architectures domain-independent.
-   - Rejected redundant standalone routes (`/resume`, `/skills`, `/experience`) to eliminate content duplication and prevent navigation friction.
-2. **Global Navigation & Configurable Controls:**
-   - Designed persistent desktop floating glass pill with active route indicators and direct `Resume ↗` trigger (`[REQUIRES USER CONFIRMATION: PDF asset to be supplied]`).
-   - Reclassified the availability beacon as a **dynamic/configurable state** (defaults to requiring user confirmation rather than claiming active availability).
-   - Designed mobile navigation combining a top header with slide-down drawer and a thumb-zone floating bottom HUD (`Resume ↓` + `Let's Talk ↗`).
-   - Specified mobile HUD collision prevention: `env(safe-area-inset-bottom)` safe-area padding, auto-collapse on downward scroll, and page bottom margin buffers (`mb-24`).
-3. **Homepage Section Architecture:**
-   - Formalized the exact order and purpose of all 10 homepage sections, balancing the cinematic 3D hero with scannable technical matrices and proof of work.
-   - Reclassified micro-telemetry (FPS, render engine, coordinates) as a **planned UI design styling concept** for future phases rather than running live telemetry.
-4. **15-Field Standardized Project Content Schema:**
-   - Codified an exhaustive 15-field schema applied across all 5 candidate projects (*WeatherSentinel*, *CareerTrack*, *Hospital Appointment Management System*, *Maa Kamakhya Hydraulic*, and *Jay Hanuman Astro Research Centre*).
-   - Explicitly separated verified implemented features from planned enhancements and flagged all unconfirmed URLs, live demos, and project statuses with `[REQUIRES USER CONFIRMATION]`.
-5. **4 Multi-Stakeholder User Journey Mappings:**
-   - Mapped detailed interaction funnels for Technical Recruiters (30s scan), Engineering Managers (architecture & code audit), Potential Clients (trust & commercial delivery), and Mobile Users (ergonomic touch-first review).
-6. **Strictly Verified Schema.org Structured Data:**
+   - Treated `https://abhinashgupta.dev/` as a **proposed canonical domain** pending user ownership confirmation, keeping all URL architectures strictly domain-independent.
+   - Rejected redundant standalone routes (`/resume`, `/skills`, `/experience`, `/blog`) to eliminate content duplication and prevent navigation friction.
+2. **Preloader, Performance & Static Hero Fallback:**
+   - Redefined the preloader as **optional / progressive enhancement**, strictly non-blocking so underlying semantic DOM landmarks mount immediately.
+   - Enforced a strict time-bounded ceiling of `2.5 seconds` (`MAX_PRELOADER_TIMEOUT = 2500ms`) and added persistent `Skip Animation [Esc / Space]` controls.
+   - Provided an accessible static hero fallback (high-contrast ambient CSS gradient canvas) if WebGL is unsupported, disabled, context lost, or if `prefers-reduced-motion: reduce` is detected.
+3. **Factual Accuracy & Personal Competency Separation:**
+   - Stripped unsupported claims and hyperbole (e.g. "elite creative developer").
+   - Explicitly distinguished the **planned portfolio implementation tech stack** (React 18, Vite, Three.js, R3F, Tailwind CSS, GSAP) from **personal engineering competencies**, marking personal proficiency claims with `[REQUIRES USER CONFIRMATION]`.
+   - Marked all unverified education institutions, degree titles, and employment dates with `[REQUIRES USER CONFIRMATION]`.
+4. **Project Archive & Non-Decorative View Toggle:**
+   - Retained the 5 proposed case studies with strict separation between currently implemented features and future roadmap features.
+   - Evaluated and justified the Grid vs Dense Table view toggle: provides genuine functional utility for technical recruiters scanning dense tabular metadata (tech stack, role, year, repository link) without heavy imagery, while preserving rich card visuals for design reviewers.
+   - Enforced keyboard accessibility, touch swiping, and `aria-live` announcements for search and filtering.
+5. **Contact Channel Resilience & Backend Honesty:**
+   - Form backend explicitly cataloged as planned (Phase 06+) rather than operational.
+   - Added direct email click-to-copy fallback and `mailto:` link.
+   - Reclassified the availability beacon and response-window notices as dynamic, configurable user data defaulting to `[REQUIRES USER CONFIRMATION]`.
+6. **Mobile Navigation, Bottom HUD & Collision Handling:**
+   - Designed persistent mobile header with slide-down drawer featuring keyboard focus-trapping (`focus-trap`), `Escape` key close, and focus restoration to the toggle button.
+   - Specified floating bottom HUD (`Resume ↓` + `Let's Talk ↗`) with iOS safe-area padding (`env(safe-area-inset-bottom)`), scroll-aware auto-collapse (`translateY(120%)` on downward scroll, reveal on upward scroll), and an `80px-96px` bottom page clearance buffer (`pb-24`) to prevent collision with form submit buttons or footer links.
+7. **Canonical ID & Anchor Consistency:**
+   - Resolved conflicting contact anchors to the canonical `#contact-cta` across the navigation bar, hero CTA, and homepage section DOM `id="contact-cta"`.
+   - Unified footer DOM ID to `#global-footer`.
+8. **Strictly Verified Schema.org Structured Data:**
    - Restricted JSON-LD Schema definitions to verified items (Name, title, verified GitHub repo), excluding unconfirmed personal profiles or domains.
-7. **Zero Application Code & Strict Flat Directory Adherence:**
-   - All 5 Phase 03 deliverables were authored directly inside `docs/` with zero subfolders, zero application code, and zero package dependencies.
+9. **Zero Application Code & Strict Flat Directory Adherence:**
+   - All Phase 03 deliverables reside directly inside `docs/` with zero subfolders, zero application code, and zero package dependencies.
 
 ---
 
-## 2. Deliverables Created in Phase 03
+## 2. Deliverables Created & Refined in Phase 03
 
 All five required deliverables reside directly inside [`docs/`](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/):
 
 1. [PHASE_03_INFORMATION_ARCHITECTURE.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_INFORMATION_ARCHITECTURE.md) — Global navigation, routing strategy, SEO schema, and accessibility governance.
-2. [PHASE_03_COMPLETE_SITEMAP.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_COMPLETE_SITEMAP.md) — Visual sitemap tree and 10-section homepage progression breakdown.
-3. [PHASE_03_USER_JOURNEY_MAPS.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_USER_JOURNEY_MAPS.md) — Interaction funnels, mobile HUD collision handling, and friction elimination.
+2. [PHASE_03_COMPLETE_SITEMAP.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_COMPLETE_SITEMAP.md) — Visual sitemap tree, 10-section homepage progression, mobile HUD specs, and progressive enhancement architecture.
+3. [PHASE_03_USER_JOURNEY_MAPS.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_USER_JOURNEY_MAPS.md) — Multi-stakeholder interaction funnels, mobile HUD collision handling, and friction elimination.
 4. [PHASE_03_PROJECT_CONTENT_SCHEMA.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_PROJECT_CONTENT_SCHEMA.md) — 15-field case study schema and verification audit for all 5 projects.
-5. [PHASE_03_FINAL_REPORT.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_FINAL_REPORT.md) — Executive synthesis and sign-off report (this file).
+5. [PHASE_03_FINAL_REPORT.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_FINAL_REPORT.md) — Executive synthesis, accuracy corrections log, and sign-off report (this file).
 
 ---
 
@@ -55,20 +64,23 @@ The following items are formally logged for **Abhinash Gupta's review and confir
 | Category / Entity | Specific Item | Current Placeholder State |
 | :--- | :--- | :--- |
 | **Domain Ownership** | Canonical Domain Name | `[PROPOSED DOMAIN: https://abhinashgupta.dev/ — pending confirmation]` |
-| **Location & Coordinates** | Footer/Header Geographic Coordinates | `[REQUIRES USER CONFIRMATION: Location & Coordinates]` |
-| **Availability Beacon** | Public Work Availability Status | `[Configurable State: REQUIRES USER CONFIRMATION]` |
-| **Resume Document** | Candidate Resume PDF File | `[REQUIRES USER CONFIRMATION: Resume PDF asset to be supplied]` |
+| **Location & Coordinates** | Footer/Header Geographic Coordinates | `[REQUIRES USER CONFIRMATION: City, Country / Lat-Long Coordinates / Timezone]` |
+| **Availability Beacon** | Public Work Availability Status | `[Configurable State: Defaults to REQUIRES USER CONFIRMATION]` |
+| **Response Window** | Expected Inquiry Turnaround Time | `[REQUIRES USER CONFIRMATION: Turnaround time e.g., 24–48 hours]` |
+| **Resume Document** | Candidate Resume PDF File | `[REQUIRES USER CONFIRMATION: Resume PDF asset to be supplied and verified]` |
 | **Contact Form Backend** | Production Form Service (e.g. Resend/Formspree)| `[Planned Backend Service: REQUIRES USER CONFIRMATION in Phase 06+]` |
 | **PGP Encryption Key** | Public PGP Security Key | `[Planned / Optional: REQUIRES USER CONFIRMATION]` |
 | **Primary Email** | Public Inquiries Email Address | `[REQUIRES USER CONFIRMATION: Primary Email Address]` |
 | **LinkedIn Profile** | Professional LinkedIn Profile URL | `[REQUIRES USER CONFIRMATION: Profile URL]` |
 | **Twitter / X Profile** | Professional X / Twitter Profile URL | `[REQUIRES USER CONFIRMATION: Profile URL]` |
+| **Education & Degrees** | Academic Institution & Credentials | `[REQUIRES USER CONFIRMATION: Degree/Diploma title, institution, dates]` |
+| **Technical Stack Competency**| Verified Personal Skills | `[REQUIRES USER CONFIRMATION: Specific competencies across TS, Three.js, Node, Postgres]` |
 | **WeatherSentinel** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
 | **CareerTrack** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
 | **Hospital Management** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
 | **Maa Kamakhya Hydraulic** | Client Repo Visibility & Live Domain | `[REQUIRES USER CONFIRMATION]` |
 | **Jay Hanuman Astro** | Repository Link & Production Domain | `[REQUIRES USER CONFIRMATION]` |
-| **Homepage (#achievements)**| Specific verified awards / milestones | Section marked optional; will collapse into `#journey` if unverified |
+| **Homepage (#achievements)**| Specific verified awards / milestones | Section marked optional; collapses into `#journey` if unverified |
 
 ---
 
@@ -76,7 +88,7 @@ The following items are formally logged for **Abhinash Gupta's review and confir
 
 - **Repository:** `https://github.com/Abhinash01/Abhinash.Portfolio.git`
 - **Branch:** `main`
-- **Commit Message:** `docs: finalize phase 03 accuracy corrections`
+- **Commit Message:** `docs: finalize phase 03 sitemap corrections`
 - **Push Execution:** Non-destructive push to `origin main`.
 - **Verification Method:** Validated using `git ls-remote origin`.
 
@@ -99,7 +111,7 @@ The following items are formally logged for **Abhinash Gupta's review and confir
 
 ## 6. Next Steps
 
-**Phase 03 is officially complete, corrected, and locked.**
+**Phase 03 is officially complete, accuracy-corrected, and locked.**
 
 Per mandatory project rules:
 - Work has **STOPPED**.
