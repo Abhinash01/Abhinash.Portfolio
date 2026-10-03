@@ -106,7 +106,9 @@ Before any code is scaffolded in future phases, the software stack has been anal
 ---
 
 ### ADR-07: Future Phase Roadmap Alignment
-- **Phase 01:** Creative Direction & Brand Identity (This phase — documentation only, no code).
-- **Phase 02:** Competitor Research & Visual Benchmarking (Deep competitive audit).
-- **Phases 03–05:** Detailed Wireframing, 3D Asset Conception, and Component Architecture.
+- **Phase 01:** Creative Direction & Branding.
+- **Phase 02:** Competitor Research & Visual Benchmarking.
+- **Phase 03:** Information Architecture & Sitemap.
+- **Phase 04:** Complete UI/UX Wireframes.
+- **Phase 05:** Design System.
 - **Phase 06:** Project Scaffolding & Setup (Installing dependencies and initializing the Vite project).

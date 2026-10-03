@@ -96,7 +96,7 @@ Position Abhinash Gupta as the definitive **Creative Full Stack Developer** by m
 ## 3. Downstream Roadmap Impact (Phases 03 – 06)
 
 These competitive advantages directly inform the upcoming phases:
-- **Phase 03 (Detailed Wireframing & Section Layouts):** Incorporate the recruiter fast-lane, asymmetric card rhythm, and 8pt typographic grid.
-- **Phase 04 (3D Asset Conception & Scene Geometry):** Model the beveled truncated polyhedron core and dual gyro-rings with precise high-key studio materials.
-- **Phase 05 (Information Architecture & Case Study Schematics):** Formalize system architecture flowcharts for all 5 verified projects.
+- **Phase 03 (Information Architecture & Sitemap):** Structure navigation hierarchy, recruiter fast-lane, and case study taxonomies.
+- **Phase 04 (Complete UI/UX Wireframes):** Establish low-fidelity and high-fidelity layouts, asymmetric project card rhythm, and 8pt typographic grid.
+- **Phase 05 (Design System):** Codify color tokens, typography components, elevation layers, and interaction states.
 - **Phase 06 (Project Scaffolding & Setup):** Initialize Vite, React 18 LTS, TypeScript, and Tailwind CSS with AG-PDS design tokens.
