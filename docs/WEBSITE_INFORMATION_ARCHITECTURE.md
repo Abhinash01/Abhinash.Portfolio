@@ -25,7 +25,6 @@ The portfolio is structured as a high-performance single-page application with d
 ├── /projects (Comprehensive Project Archive & Filterable Showcase)
 │     ├── /projects/weathersentinel (WeatherSentinel Case Study)
 │     ├── /projects/careertrack (CareerTrack Case Study)
-│     ├── /projects/hospital-appointment (Hospital Appointment System Case Study)
 │     ├── /projects/maa-kamakhya-hydraulic (Maa Kamakhya Hydraulic Case Study)
 │     └── /projects/jay-hanuman-astro (Jay Hanuman Astro Centre Case Study)
 │

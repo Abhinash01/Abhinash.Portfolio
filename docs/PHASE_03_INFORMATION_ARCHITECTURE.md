@@ -56,7 +56,7 @@ The global navigation system provides persistent spatial orientation across all 
 
 ### 2.3 Evaluation of Dropdowns
 - **Architectural Decision:** **No complex multi-level dropdowns are permitted.**
-- **Rationale:** With only 5 curated project case studies and a tightly focused sitemap, dropdown menus introduce unnecessary mobile touch friction, keyboard trap risks, and hover-delay lag. Direct links provide superior accessibility and faster discovery.
+- **Rationale:** With 4 curated project case studies (portfolio project count maintained at four pending user confirmation of any additional projects) and a tightly focused sitemap, dropdown menus introduce unnecessary mobile touch friction, keyboard trap risks, and hover-delay lag. Direct links provide superior accessibility and faster discovery.
 
 ### 2.4 Mobile Navigation Architecture (< 768px)
 ```
@@ -91,7 +91,7 @@ To ensure visitors arriving directly from external links (e.g., GitHub READMEs o
 The footer (`#global-footer` on light-mode canvas with inverted `#101827` base) provides exhaustive secondary orientation:
 - **Column 1 (Identity):** Wordmark, title, location: `[REQUIRES USER CONFIRMATION: Location & Coordinates]`, local time ticker: `[REQUIRES USER CONFIRMATION: Timezone e.g. IST]`.
 - **Column 2 (Navigation):** Direct links to `Home`, `About`, `All Projects`, `Contact`, `Resume`.
-- **Column 3 (Projects):** Direct shortcuts to all 5 project case studies.
+- **Column 3 (Projects):** Direct shortcuts to the 4 project case studies.
 - **Column 4 (Social Channels):** Links to GitHub (`https://github.com/Abhinash01`), LinkedIn (`[REQUIRES USER CONFIRMATION: Profile URL]`), Twitter/X (`[REQUIRES USER CONFIRMATION: Profile URL]`), and Email (`[REQUIRES USER CONFIRMATION: Email Address]`). *(Note: Only confirmed links are active; placeholders require user verification).*
 - **Design Concept Telemetry Bar (Planned UI Concept):** Visual footer styling concept showcasing planned tech stack credits (React 18, Three.js, Tailwind CSS, Lenis); Back-to-Top magnetic button (`#btn-scroll-top`). *(Not claimed as running live telemetry prior to implementation).*
 
@@ -114,19 +114,19 @@ All paths are defined as **root-relative** to maintain complete independence fro
 | :--- | :--- | :--- | :--- |
 | `/` | `Abhinash Gupta — Creative Full Stack Developer` | Flagship single-page overview with interactive 3D hero, featured builds, skills matrix, bio preview, and contact. | `/` `[Proposed Domain: https://abhinashgupta.dev/]` |
 | `/projects` | `Selected Projects Archive — Abhinash Gupta` | Filterable catalog of all engineering builds with category toggles and search. | `/projects` |
-| `/projects/:slug` | `[Project Name] — Case Study & Architecture` | Deep-dive technical breakdown with 12-point engineering schema and architecture flow. | `/projects/:slug` |
+| `/projects/:slug` | `[Project Name] — Case Study & Architecture` | Deep-dive technical breakdown with standardized case study schema and architecture flow. | `/projects/:slug` |
 | `/about` | `About & Engineering Philosophy — Abhinash Gupta` | Complete biography, technical mindset, academic background, career timeline, hardware/dev setup. | `/about` |
 | `/contact` | `Contact & Collaboration — Abhinash Gupta` | Dedicated inquiry portal with client form, direct email copy button [Planned Form Backend / PGP: REQUIRES USER CONFIRMATION]. | `/contact` |
 
 ### 3.2 Canonical URL & Slug Conventions
 - **Lowercase Only:** All URLs are strictly lowercase alphanumeric with hyphens (`kebab-case`).
 - **Trailing Slash Policy:** **Strict No Trailing Slash** (e.g., `/projects`, never `/projects/`). Consistent server-side 301 redirection normalizes all trailing slash requests.
-- **Candidate Project Slugs:**
+- **Candidate Project Slugs (Four Portfolio Project Candidates — Pending Individual Verification):**
   1. `/projects/weathersentinel`
   2. `/projects/careertrack`
-  3. `/projects/hospital-appointment-system`
-  4. `/projects/maa-kamakhya-hydraulic`
-  5. `/projects/jay-hanuman-astro`
+  3. `/projects/maa-kamakhya-hydraulic`
+  4. `/projects/jay-hanuman-astro`
+  *(Note: Four portfolio project candidates — pending individual verification. No fifth project is assumed until explicitly confirmed).*
 
 ### 3.3 Evaluation of Candidate Standalone Routes
 - **Should "Resume" be a standalone route (`/resume`)?**
@@ -147,7 +147,7 @@ The content architecture is structured as a normalized relational schema to main
 │                        CENTRALIZED CONTENT ENTITY                      │
 │                                                                        │
 │   ┌──────────────────┐               ┌──────────────────────────────┐  │
-│   │  PROFILE ENTITY  │               │      PROJECT ENTITY (5)      │  │
+│   │  PROFILE ENTITY  │               │      PROJECT ENTITY (4)      │  │
 │   │  • Bio           │               │  • Title, Slug, Classification│  │
 │   │  • [Coordinates] │               │  • Implemented vs Roadmap    │  │
 │   │  • [Status Flag] │               │  • Architecture Diagram      │  │
@@ -167,7 +167,7 @@ The content architecture is structured as a normalized relational schema to main
 | Content Entity | Homepage (`/`) | Projects Archive (`/projects`) | Project Detail (`/projects/:slug`) | About (`/about`) | Contact (`/contact`) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Personal Bio & Positioning** | Summary Headline | — | Author Attribution | Full Biography | Contact Context |
-| **Featured Projects** | Top Flagships (Cards) | All 5 Projects | Cross-links (Next/Prev) | Mentioned in Story | — |
+| **Featured Projects** | Top 3 Flagships (Cards) | 4 Candidate Projects | Cross-links (Next/Prev) | Mentioned in Story | — |
 | **Technical Stack Matrix** | High-level Categories | Filterable Tag Cloud | Specific Stack Employed | Complete Tooling List| Relevant Project Type|
 | **Architecture Blueprints**| — | — | Full Visual Schematic | Systems Philosophy | — |
 | **Career Timeline** | Key Milestones | — | Project Timeline | Complete Chronology | — |

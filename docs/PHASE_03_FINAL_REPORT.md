@@ -13,7 +13,7 @@ Phase 03 established the complete structural blueprint, page hierarchy, navigati
 
 ### Key Accomplishments & Accuracy Corrections in Phase 03:
 1. **Sitemap & Route Rationalization:**
-   - Established a lean, root-relative routing model: `/` (Home), `/projects` (Archive), `/projects/:slug` (5 Case Studies), `/about` (Extended Story), and `/contact` (Collaboration).
+   - Established a lean, root-relative routing model: `/` (Home), `/projects` (Archive), `/projects/:slug` (4 Case Studies), `/about` (Extended Story), and `/contact` (Collaboration).
    - Treated `https://abhinashgupta.dev/` as a **proposed canonical domain** pending user ownership confirmation, keeping all URL architectures strictly domain-independent.
    - Rejected redundant standalone routes (`/resume`, `/skills`, `/experience`, `/blog`) to eliminate content duplication and prevent navigation friction.
 2. **Preloader, Performance & Static Hero Fallback:**
@@ -25,7 +25,7 @@ Phase 03 established the complete structural blueprint, page hierarchy, navigati
    - Explicitly distinguished the **planned portfolio implementation tech stack** (React 18, Vite, Three.js, R3F, Tailwind CSS, GSAP) from **personal engineering competencies**, marking personal proficiency claims with `[REQUIRES USER CONFIRMATION]`.
    - Marked all unverified education institutions, degree titles, and employment dates with `[REQUIRES USER CONFIRMATION]`.
 4. **Project Archive & Non-Decorative View Toggle:**
-   - Retained the 5 proposed case studies with strict separation between currently implemented features and future roadmap features.
+   - Retained four portfolio project candidates — pending individual verification (*WeatherSentinel*, *CareerTrack*, *Maa Kamakhya Hydraulic*, and *Jay Hanuman Astro Research Centre*), completely removing *Hospital Appointment Management System* per user confirmation that it is not Abhinash's project.
    - Evaluated and justified the Grid vs Dense Table view toggle: provides genuine functional utility for technical recruiters scanning dense tabular metadata (tech stack, role, year, repository link) without heavy imagery, while preserving rich card visuals for design reviewers.
    - Enforced keyboard accessibility, touch swiping, and `aria-live` announcements for search and filtering.
 5. **Contact Channel Resilience & Backend Honesty:**
@@ -52,7 +52,7 @@ All five required deliverables reside directly inside [`docs/`](file:///c:/Users
 1. [PHASE_03_INFORMATION_ARCHITECTURE.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_INFORMATION_ARCHITECTURE.md) — Global navigation, routing strategy, SEO schema, and accessibility governance.
 2. [PHASE_03_COMPLETE_SITEMAP.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_COMPLETE_SITEMAP.md) — Visual sitemap tree, 10-section homepage progression, mobile HUD specs, and progressive enhancement architecture.
 3. [PHASE_03_USER_JOURNEY_MAPS.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_USER_JOURNEY_MAPS.md) — Multi-stakeholder interaction funnels, mobile HUD collision handling, and friction elimination.
-4. [PHASE_03_PROJECT_CONTENT_SCHEMA.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_PROJECT_CONTENT_SCHEMA.md) — 15-field case study schema and verification audit for all 5 projects.
+4. [PHASE_03_PROJECT_CONTENT_SCHEMA.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_PROJECT_CONTENT_SCHEMA.md) — Standardized case study schema and verification audit for all 4 candidate projects.
 5. [PHASE_03_FINAL_REPORT.md](file:///c:/Users/DELL/Desktop/Abhinash/Portfolio/docs/PHASE_03_FINAL_REPORT.md) — Executive synthesis, accuracy corrections log, and sign-off report (this file).
 
 ---
@@ -77,7 +77,6 @@ The following items are formally logged for **Abhinash Gupta's review and confir
 | **Technical Stack Competency**| Verified Personal Skills | `[REQUIRES USER CONFIRMATION: Specific competencies across TS, Three.js, Node, Postgres]` |
 | **WeatherSentinel** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
 | **CareerTrack** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
-| **Hospital Management** | GitHub Repo & Live Demo URLs | `[REQUIRES USER CONFIRMATION]` |
 | **Maa Kamakhya Hydraulic** | Client Repo Visibility & Live Domain | `[REQUIRES USER CONFIRMATION]` |
 | **Jay Hanuman Astro** | Repository Link & Production Domain | `[REQUIRES USER CONFIRMATION]` |
 | **Homepage (#achievements)**| Specific verified awards / milestones | Section marked optional; collapses into `#journey` if unverified |

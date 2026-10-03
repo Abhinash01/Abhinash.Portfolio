@@ -76,34 +76,10 @@ Every project case study in the portfolio adheres to a standardized, objective 1
 - **Technical Challenges:** Structuring relational database foreign keys and cascade deletions properly so that user deletion safely cleans up associated application history.
 - **Measurable Outcomes:** Predictable state management with React hooks; secure REST API endpoints protected by authorization middleware.
 
----
-
-### Project 03: Hospital Appointment Management System
-- **Classification:** Healthcare Clinic Appointment Booking & Administrative Portal
-- **Role:** Full-Stack Developer & Database Modeler
-- **Primary Tech Stack:** React, Node.js, Express, MySQL, Tailwind CSS, REST API.
-- **Project Overview:** A centralized clinic scheduling application facilitating patient appointment booking, doctor schedule tracking, and basic administrative reception workflows.
-- **Problem Statement:** Small clinics relying on manual paper registers or ad-hoc phone scheduling encounter double-booked slots, miscommunicated cancellation dates, and difficulty tracking doctor shift availability.
-- **Objectives:**
-  - Provide an organized calendar of available doctor time slots.
-  - Facilitate appointment booking with input validation.
-  - Establish role-based authorization for administrative vs. patient views.
-- **Verified Implemented Core Features:**
-  - Doctor profile and availability slot directory.
-  - Patient appointment scheduling interface with date/time picker and form validation.
-  - Reception / Admin dashboard for viewing all scheduled visits for a given day.
-  - Appointment status updating (Scheduled, Completed, Cancelled).
-  - Relational MySQL schema with foreign key constraints ensuring data integrity between doctors, patients, and bookings.
-- **Planned Enhancements (Roadmap):**
-  - Automated SMS / Email appointment reminders.
-  - Patient digital medical record and prescription attachment uploads.
-  - Database row-level locking or optimistic concurrency controls to handle simultaneous high-volume concurrent booking collisions.
-- **Technical Challenges:** Ensuring time slot collisions are prevented during form submission by verifying existing bookings on the server before committing new database records.
-- **Measurable Outcomes:** Clean separation of frontend client and REST API controllers; robust relational schema design.
 
 ---
 
-### Project 04: Maa Kamakhya Hydraulic
+### Project 03: Maa Kamakhya Hydraulic
 - **Classification:** Industrial Machinery Catalog & Corporate Inquiry Website
 - **Role:** Frontend Developer & UI Designer
 - **Primary Tech Stack:** React, Vite, Tailwind CSS, Lucide Icons.
@@ -127,7 +103,7 @@ Every project case study in the portfolio adheres to a standardized, objective 1
 
 ---
 
-### Project 05: Jay Hanuman Astro Research Centre
+### Project 04: Jay Hanuman Astro Research Centre
 - **Classification:** Cultural Research & Astrological Consultation Web Portal
 - **Role:** Web Developer & UI Designer
 - **Primary Tech Stack:** React, Tailwind CSS, JavaScript.
@@ -153,7 +129,7 @@ Every project case study in the portfolio adheres to a standardized, objective 1
 ## 3. Project Filter & Categorization Strategy
 
 On the `/projects` archive page, visitors can toggle between intuitive taxonomy filters:
-- **`All Work`** (Complete view of all 5 builds).
-- **`Full-Stack Systems`** (*CareerTrack*, *Hospital Appointment System*, *WeatherSentinel*).
+- **`All Work`** (Complete view of all 4 portfolio project candidates).
+- **`Full-Stack Systems`** (*CareerTrack*, *WeatherSentinel*).
 - **`Enterprise & Commercial`** (*Maa Kamakhya Hydraulic*, *Jay Hanuman Astro Research Centre*).
 - **`Dashboards & Utilities`** (*WeatherSentinel*, *CareerTrack*).

@@ -105,29 +105,25 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
-│  // 02. SELECTED WORK (5)                    [ VIEW ARCHIVE ↗ ]│
+│  // 02. SELECTED WORK (3 FEATURED)       [ VIEW ARCHIVE (4) ↗ ]│
+│                                                                │
+│  ┌───────────────────────────────────────────────────────────┐ │
+│  │ 01 // WEATHERSENTINEL (FEATURED FLAGSHIP 01)              │ │
+│  │ Weather Dashboard & Environmental Telemetry Application   │ │
+│  │ [React] [Node] [Express] [API]     [EXPLORE CASE STUDY ↗] │ │
+│  └───────────────────────────────────────────────────────────┘ │
 │                                                                │
 │  ┌───────────────────────────────┐  ┌────────────────────────┐ │
-│  │ 01 // WEATHERSENTINEL         │  │ 02 // CAREERTRACK      │ │
-│  │ Weather Dashboard &           │  │ Job Application       │ │
-│  │ Environmental Telemetry App   │  │ Pipeline Manager       │ │
-│  │ [React] [Node] [Express] [API]│  │ [React] [Postgres] [TS]│ │
+│  │ 02 // CAREERTRACK             │  │ 03 // MAA KAMAKHYA HYD │ │
+│  │ Job Application Pipeline      │  │ Industrial Machinery   │ │
+│  │ Tracking & Analytics Tool     │  │ Catalog & RFQ Portal   │ │
+│  │ [React] [Node] [Express] [TS] │  │ [React] [Node] [Tailw] │ │
 │  │ [EXPLORE CASE STUDY ↗]        │  │ [EXPLORE CASE STUDY ↗] │ │
 │  └───────────────────────────────┘  └────────────────────────┘ │
-│                                                                │
-│  ┌───────────────────────────────┐  ┌────────────────────────┐ │
-│  │ 03 // HOSPITAL APPOINTMENT    │  │ 04 // MAA KAMAKHYA HYD │ │
-│  │ Clinical Patient & Telehealth │  │ Industrial Machinery   │ │
-│  │ Scheduling Management Portal  │  │ Catalog & RFQ Portal   │ │
-│  └───────────────────────────────┘  └────────────────────────┘ │
-│  ┌───────────────────────────────────────────────────────────┐ │
-│  │ 05 // JAY HANUMAN ASTRO RESEARCH CENTRE                    │ │
-│  │ Cultural Research & Astrological Consultation Portal       │ │
-│  └───────────────────────────────────────────────────────────┘ │
 └────────────────────────────────────────────────────────────────┘
 ```
 - **Purpose:** Deliver verifiable evidence of engineering capability and product design.
-- **Layout:** Asymmetric editorial grid. Large hero card for flagship #1, side-by-side cards for #2 & #3, wide cards for #4 & #5.
+- **Layout:** Asymmetric editorial grid showcasing top 3 featured builds (large hero card for flagship #1, side-by-side cards for #2 & #3), with direct link to the 4-candidate archive.
 - **Visual Treatment:** Solid opaque `#FFFFFF` card surfaces, 1px `#E5EAF1` border, hover elevation with royal blue rim glow, interactive image zoom (`scale: 1.03`). No blurry glassmorphism.
 - **DOM ID:** `id="featured-work-section"`.
 

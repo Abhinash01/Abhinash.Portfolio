@@ -26,7 +26,6 @@
 ├── /projects (All-Projects Archive & Filterable Catalog)
 │     ├── /projects/weathersentinel
 │     ├── /projects/careertrack
-│     ├── /projects/hospital-appointment-system
 │     ├── /projects/maa-kamakhya-hydraulic
 │     └── /projects/jay-hanuman-astro
 │
@@ -54,7 +53,7 @@
 | :--- | :--- | :--- | :--- |
 | `/` | Primary Root | The core conversion engine. Showcases the 3D hero scene (with static fallback), featured projects, skills matrix, and contact points in a unified, fluid narrative flow. | **Essential** |
 | `/projects` | Dedicated Hub | Archive for technical recruiters wishing to inspect the complete catalog of projects with search, category filtering, and accessible view options. | **Essential** |
-| `/projects/:slug` | Deep-Dive Case Studies | 5 dedicated pages for in-depth technical analysis: architecture diagrams, schemas, implemented vs planned features, challenges, and trade-offs. | **Essential** |
+| `/projects/:slug` | Deep-Dive Case Studies | 4 dedicated pages for in-depth technical analysis: architecture diagrams, schemas, implemented vs planned features, challenges, and trade-offs. | **Essential** |
 | `/about` | Long-form Editorial | In-depth narrative on Abhinash's engineering background, academic roots, systems principles, and developer setup. | **Essential** |
 | `/contact` | Inquiry Hub | Dedicated standalone inquiry portal with project scoping options, direct email fallback, and timezone clarity. | **Essential** |
 | `/resume` | Standalone Page? | **REJECTED.** A dedicated HTML resume creates content duplication with `/about`. Instead, `/resume.pdf` (`[REQUIRES USER CONFIRMATION: PDF asset to be supplied and verified]`) is accessed directly via modal/download. | **Consolidated** |
@@ -119,10 +118,10 @@ The homepage (`/`) is structured to guide visitors through a logical progression
 - **Purpose:** Validates engineering capability, system design, and UI polish through top flagship projects.
 - **Main Content:**
   - Section Header: `// 02. SELECTED WORK` with shortcut link `View All Projects ↗` (`/projects`).
-  - Asymmetric project card grid featuring 3 top builds:
+  - Asymmetric project card grid featuring top builds:
     1. *WeatherSentinel* (Atmospheric Dashboard & Telemetry)
     2. *CareerTrack* (Job Application Pipeline & Tracker)
-    3. *Hospital Appointment Management System* (Clinical Scheduling Portal)
+    3. *Maa Kamakhya Hydraulic* (Industrial Machinery & Equipment Platform)
   - Cards display verified implemented features, tech stack badges, and 16:9 minimalist browser mockups.
   - Unconfirmed metrics, live deployment URLs, and client claims are flagged with `[REQUIRES USER CONFIRMATION]`.
 - **Primary CTA:** Card-level buttons `Explore Case Study ↗` (`/projects/:slug`).
@@ -221,17 +220,17 @@ The homepage (`/`) is structured to guide visitors through a logical progression
   - Supports touch swiping on mobile viewports.
 - **Search Bar:** Client-side search input filtering by project title, keywords, and technologies. Live result counts announced via `aria-live="polite"`. Includes clear reset CTA when zero results match.
 - **View Toggle Evaluation (Grid vs Dense Table):**
-  - *Utility Rationale:* Technical recruiters and engineering directors frequently need to scan 5–10 projects rapidly by stack, role, year, and repository status without scrolling through extensive 16:9 imagery. Meanwhile, design-oriented reviewers prefer rich card visuals.
+  - *Utility Rationale:* Technical recruiters and engineering directors frequently need to scan projects rapidly by stack, role, year, and repository status without scrolling through extensive 16:9 imagery. Meanwhile, design-oriented reviewers prefer rich card visuals.
   - *Anti-Decoration Enforcement:* To ensure the toggle provides genuine functional value rather than ornamental fluff:
     - Both views present complete semantic structures (`role="feed"` with article cards vs `role="table"` with sortable column headers).
     - Table view exposes direct GitHub repo links and tech badges in dense rows.
     - Preference is persisted locally (`localStorage.getItem('projects_view_preference')`) to respect user choice across sessions.
-- **Cards/Rows:** Displays all 5 projects with verified titles, status badges (`[REQUIRES USER CONFIRMATION: Status]`), and links to `/projects/:slug`.
+- **Cards/Rows:** Displays all four portfolio project candidates — pending individual verification, with verified titles, status badges (`[REQUIRES USER CONFIRMATION: Status]`), and links to `/projects/:slug`. (Portfolio project count maintained at four candidates pending user confirmation of additional projects).
 
 ### 4.2 `/projects/:slug` — Individual Case Study
 - **Breadcrumbs:** `Home (/) > Projects (/projects) > [Project Name]` with Schema.org `BreadcrumbList`.
 - **Header:** Title, classification, timeline, role, GitHub link, Live demo link (`[Flagged if unconfirmed]`).
-- **12-Point Content Schema:** Detailed in `PHASE_03_PROJECT_CONTENT_SCHEMA.md` (Problem, Solution, Architecture, Implemented Features, Schema, Trade-offs, Future Roadmap).
+- **Standardized Content Schema:** Detailed in `PHASE_03_PROJECT_CONTENT_SCHEMA.md` (Problem, Solution, Architecture, Implemented Features, Schema, Trade-offs, Future Roadmap).
 - **Distinction of Features:** Strictly marks currently implemented features vs future roadmap items.
 - **Next/Prev Navigation:** Seamless pagination linking to the next case study.
 

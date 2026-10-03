@@ -49,7 +49,7 @@ Position Abhinash Gupta as the definitive **Creative Full Stack Developer** by m
 - **Market Reality:** Most portfolio case studies either boast unverifiable marketing claims (*"scaled to millions of users"* without proof) or present shallow bullet points that say nothing about database structure, API design, or trade-offs.
 - **Our Strategic Advantage:** Implement the standardized 12-point engineering case study format established in Phase 01.
 - **Actionable Execution:** 
-  - Clearly delineate **`Verified Implemented Features`** from **`Planned Enhancements (Roadmap)`** across all 5 projects (*WeatherSentinel*, *CareerTrack*, *Hospital Appointment System*, *Maa Kamakhya Hydraulic*, and *Jay Hanuman Astro Research Centre*).
+  - Clearly delineate **`Verified Implemented Features`** from **`Planned Enhancements (Roadmap)`** across all four portfolio project candidates — pending individual verification (*WeatherSentinel*, *CareerTrack*, *Maa Kamakhya Hydraulic*, and *Jay Hanuman Astro Research Centre*).
   - Include clean, vector system architecture diagrams and relational schema outlines that allow engineering directors to evaluate system design depth in under 60 seconds.
 
 ---

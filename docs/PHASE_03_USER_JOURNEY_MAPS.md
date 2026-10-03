@@ -8,7 +8,7 @@
 
 ## 1. User Journey Overview
 
-To ensure that the portfolio serves diverse stakeholders with precision, we mapped **four primary user journeys**. Each journey is designed to minimize cognitive friction, maximize information clarity, and accelerate conversion toward hiring, collaboration, or technical evaluation.
+To ensure that the portfolio serves diverse stakeholders with precision, we mapped **four primary user journeys**. Each journey is designed to minimize cognitive friction, maximize information clarity, and provide direct pathways toward technical evaluation, collaboration, or hiring.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -16,13 +16,13 @@ To ensure that the portfolio serves diverse stakeholders with precision, we mapp
 ├───────────────────────────────────┬────────────────────────────────────┤
 │  JOURNEY A: TECHNICAL RECRUITER   │  JOURNEY B: ENGINEERING MANAGER    │
 │  • Rapid skills & stack validation│  • Code quality & system design    │
-│  • One-click resume access        │  • Architecture diagrams & GitHub  │
-│  • Availability & contact check   │  • Trade-off & problem-solving depth│
+│  • Direct resume access trigger   │  • Architecture diagrams & GitHub  │
+│  • Configurable availability check│  • Documented trade-offs & context │
 ├───────────────────────────────────┼────────────────────────────────────┤
-│  JOURNEY C: POTENTIAL CLIENT      │  JOURNEY D: MOBILE AUDITOR         │
-│  • Commercial reliability & trust │  • Thumb-friendly touch ergonomics │
-│  • Relevant commercial builds     │  • Zero GPU stutter or lag         │
-│  • Direct inquiry conversion      │  • Clear, readable text contrast   │
+│  JOURNEY C: POTENTIAL CLIENT      │  JOURNEY D: MOBILE VISITOR         │
+│  • Commercial delivery & trust    │  • Ergonomic touch navigation      │
+│  • Verified project case studies  │  • Fluid scrolling & safe areas    │
+│  • Straightforward inquiry channel│  • High-contrast mobile typography │
 └───────────────────────────────────┴────────────────────────────────────┘
 ```
 
@@ -33,99 +33,118 @@ To ensure that the portfolio serves diverse stakeholders with precision, we mapp
 ---
 
 ### Journey A — The Technical Recruiter / Talent Acquisition Specialist
-- **Persona Context:** Reviews 30–50 engineering profiles per day. Spends an average of **30–45 seconds** on initial profile evaluation before deciding to short-list or move on.
-- **Entry Point:** Homepage (`/`) or direct link via LinkedIn message / resume submission.
+- **Persona Context:** Reviews multiple candidate profiles daily.  
+  *(Illustrative Persona Assumption: Evaluates candidate alignment in an estimated 30–45 second rapid-scan window based on industry hiring patterns; this is a design persona reference, not an empirical personal statistic).*
+- **Entry Point:** Homepage (`/`) or direct link via professional referral.
 - **Navigation Path:**
-  1. *Landing on Hero:* Observes headline (`Creative Full Stack Developer`) and configurable status beacon (when enabled).
-  2. *Scan Navigation:* Immediately notices the prominent `Resume ↗` trigger in the top-right navigation pill.
-  3. *Scroll to Professional Introduction:* Reads 2-sentence summary establishing backend resilience and modern frontend mastery.
-  4. *Scan Technical Expertise Matrix (`#expertise`):* Fast-scans categorized chips (React, TypeScript, Node.js, Express, PostgreSQL, Three.js) to confirm keyword alignment.
-  5. *Evaluate Featured Project:* Clicks on *CareerTrack* or *WeatherSentinel* card to verify real full-stack build experience.
-  6. *Trigger Conversion Action:* Clicks `Resume ↗` to view the candidate PDF (once asset is supplied), then clicks `Let's Talk` to send an inquiry.
-- **Important Decisions:**
-  - *"Does this developer have genuine full-stack experience or just frontend HTML/CSS?"* (Resolved by `#expertise` matrix showing PostgreSQL, Node.js, and REST APIs).
-  - *"Can I easily forward their resume to the hiring manager?"* (Resolved by instant `Resume ↗` link in the persistent header).
-- **Primary Conversion Action:** Resume access (`/resume.pdf` — `[REQUIRES USER CONFIRMATION: PDF asset to be supplied]`) and inquiry submission (`/contact`).
-- **Possible Friction Points & Architectural Solutions:**
-  - *Friction:* Slow loading 3D scene blocking content access.  
-    *Solution:* Critical DOM (headers, skills, resume trigger) hydrates in `< 800ms`; 3D scene streams asynchronously.
+  1. *Landing on Hero:* Observes headline (`Full Stack & Creative Developer`) and configurable status beacon (`[Configurable State: Defaults to REQUIRES USER CONFIRMATION: Status & Visibility]`).
+  2. *Scan Navigation:* Immediately notices the persistent `Resume ↗` trigger in the top-right navigation pill pointing to `/resume.pdf` (`[REQUIRES USER CONFIRMATION: Resume asset]`).
+  3. *Scroll to Professional Introduction (`#intro`):* Reads concise 2-sentence summary establishing engineering principles and user experience focus.
+  4. *Scan Technical Expertise Matrix (`#expertise`):* Fast-scans categorized competency chips, clearly distinguishing confirmed foundational technologies from planned stack elements and technologies requiring verification (`[REQUIRES USER CONFIRMATION: Specific competencies across TypeScript, Three.js, Node.js, Express, PostgreSQL, MongoDB]`).
+  5. *Evaluate Featured Project:* Clicks on *CareerTrack* or *WeatherSentinel* card to view structured case study documentation.
+  6. *Trigger Conversion Action:* Clicks `Resume ↗` to view the candidate PDF (once verified asset is provided), or clicks `Get in Touch` (`#contact-cta`) to send an inquiry.
+- **Important Decisions Addressed:**
+  - *"Does this candidate demonstrate full-stack capabilities?"* (Addressed by `#expertise` matrix separating confirmed vs planned skills, plus documented project schemas).
+  - *"Can I easily access their resume to share with a hiring team?"* (Addressed by persistent `Resume ↗` link in the header).
+- **Primary Conversion Action:** Accessing `/resume.pdf` (`[REQUIRES USER CONFIRMATION: Resume asset]`) and submitting an inquiry via `#contact-cta` or `/contact`.
+- **Potential Friction Points & Architectural Solutions:**
+  - *Friction:* Slow-loading 3D scene blocking content access.  
+    *Solution & Proposed Target:* Primary DOM content (headings, skills matrix, navigation, resume trigger) mounts immediately; 3D canvas streams asynchronously on a decoupled layer. *Proposed Target:* DOM Interactive `< 1.2s` on desktop broadband, measured via Chrome Lighthouse / Web Vitals.
   - *Friction:* Missing direct contact info or required phone numbers.  
-    *Solution:* Direct email address with 1-click copy button (`[REQUIRES USER CONFIRMATION: Primary Email]`) available in header and footer.
+    *Solution:* Direct email address with 1-click copy button (`[REQUIRES USER CONFIRMATION: Primary Email]`) available in header and footer alongside a standard `mailto:` fallback link.
 
 ---
 
 ### Journey B — The Technical Visitor / Engineering Manager / VP of Engineering
-- **Persona Context:** Evaluates technical depth, architectural maturity, code craftsmanship, and problem-solving ability. Wants to see evidence of clean code, database schemas, and realistic trade-offs.
-- **Entry Point:** Direct link to a case study (e.g., `/projects/careertrack` from GitHub or portfolio link).
+- **Persona Context:** Evaluates technical depth, architectural maturity, code craftsmanship, and problem-solving clarity. Looks for evidence of modular code, structured schemas, and realistic engineering trade-offs.
+- **Entry Point:** Direct link to a project case study (e.g., `/projects/careertrack` or `/projects/weathersentinel`).
 - **Navigation Path:**
-  1. *Land on Case Study:* Reads Executive Overview and verifies the Technology Stack Matrix.
-  2. *Inspect Architectural Blueprint:* Studies the data flow diagram and database schema relationships.
-  3. *Review Implemented Features vs. Roadmap:* Validates that features are grounded, working, and clearly distinguished from planned improvements.
-  4. *Examine Technical Challenges:* Reads the real bottlenecks encountered (e.g., handling state desynchronization or race conditions) and the architectural solution applied.
-  5. *Click Verified GitHub Link:* Opens the official repository on GitHub to inspect code modularity, TypeScript types, and Git commit discipline.
-  6. *Return via Breadcrumb:* Uses `Home > Projects` to explore other builds or initiate an interview invitation.
-- **Important Decisions:**
-  - *"Did Abhinash architect this system himself, or was it a tutorial copy?"* (Resolved by transparent challenge/solution narrative and custom architecture diagrams).
-  - *"How does he handle edge cases and data integrity?"* (Resolved by specific sections on database foreign keys, debouncing, and transactions).
-- **Primary Conversion Action:** Opening verified GitHub repository and sending an interview invitation.
-- **Possible Friction Points & Architectural Solutions:**
-  - *Friction:* Broken or fabricated GitHub links.  
-    *Solution:* All repository links are verified against `https://github.com/Abhinash01`. Where repos are private or under review, status is explicitly labeled `[REQUIRES USER CONFIRMATION]` or `[PRIVATE REPOSITORY]`.
-  - *Friction:* Vague marketing claims without code evidence.  
-    *Solution:* Standardized 12-point engineering schema with precise technical terminology.
+  1. *Land on Case Study (`/projects/:slug`):* Reads Executive Overview and verifies Technology Stack Matrix (distinguishing implemented project stack from future roadmap items).
+  2. *Inspect Architectural Flow:* Studies high-level data flow diagram and data entity relationships.
+  3. *Review Implemented Features vs. Roadmap:* Validates that implemented capabilities are clearly separated from planned enhancements.
+  4. *Examine Technical Challenges:* Reviews documented engineering bottlenecks and applied solutions based strictly on verified project implementation evidence (avoiding unsubstantiated claims of transactions, race-condition handling, or specific database internals unless documented).
+  5. *Inspect Repository:* Clicks repository link to view public code on GitHub (`https://github.com/Abhinash01`), with private or unconfirmed repositories flagged `[REQUIRES USER CONFIRMATION]`.
+  6. *Return via Breadcrumbs:* Uses `Home (/) > Projects (/projects) > [Project Name]` breadcrumbs to explore the full archive or initiate contact via `/contact`.
+- **Important Decisions Addressed:**
+  - *"Did the developer understand system architecture and design choices?"* (Addressed by documented trade-offs, schemas, and architecture diagrams).
+  - *"Is the code accessible for review?"* (Addressed by direct repository links to verified public GitHub projects).
+- **Primary Conversion Action:** Navigating to verified GitHub repository and sending an interview inquiry.
+- **Potential Friction Points & Architectural Solutions:**
+  - *Friction:* Unverifiable claims or broken repository links.  
+    *Solution:* Repository links individually verified against confirmed GitHub repositories (`https://github.com/Abhinash01`). Unconfirmed or private repositories flagged with `[REQUIRES USER CONFIRMATION]`.
+  - *Friction:* Vague marketing buzzwords without technical grounding.  
+    *Solution:* Standardized case study schema focusing on actual architectural decisions and verified capabilities.
 
 ---
 
 ### Journey C — The Potential Commercial Client / Agency Partner
-- **Persona Context:** Seeking a dependable full-stack developer or creative technologist to build a high-performance web flagship, client application, or custom interactive experience.
-- **Entry Point:** Homepage (`/`) or commercial referral.
+- **Persona Context:** Seeking a dependable full-stack developer or creative technologist to build a responsive web application, custom interface, or commercial platform.
+- **Entry Point:** Homepage (`/`) or direct commercial referral.
 - **Navigation Path:**
-  1. *Land on Hero:* Immediately wowed by the high-key luxury 3D sculpture and smooth Lenis momentum scrolling.
-  2. *Inspect Commercial Builds:* Scrolls to `#featured-work` and clicks on *Maa Kamakhya Hydraulic* or *Jay Hanuman Astro Research Centre* to evaluate real-world business credibility.
-  3. *Read About & Principles (`/about`):* Understands Abhinash's commitment to reliability, communication, and visual polish.
-  4. *Review Work Process & Timeline:* Evaluates professional communication and delivery expectations.
-  5. *Navigate to Dedicated Contact Portal (`/contact`):* Selects project scope (Full-Stack Web App, 3D Interactive, Consultation), provides budget expectations, and transmits inquiry.
-- **Important Decisions:**
-  - *"Can this developer deliver a commercial product that elevates my brand above competitors?"* (Resolved by the flawless luxury visual direction and verified commercial builds).
-  - *"Will they be reliable and communicative?"* (Resolved by transparent contact forms, clear timezone visibility, and professional tone).
-- **Primary Conversion Action:** Submitting a detailed project inquiry form on `/contact`.
-- **Possible Friction Points & Architectural Solutions:**
-  - *Friction:* Excessive technical jargon that confuses non-technical stakeholders.  
-    *Solution:* Case studies provide both high-level Executive Overviews and detailed technical deep-dives.
-  - *Friction:* Unclear availability or location.  
-    *Solution:* Dedicated configurable availability beacon and local time ticker (`[REQUIRES USER CONFIRMATION: Location & Timezone]`) in header and footer.
+  1. *Land on Hero:* Observes modern visual aesthetic, smooth scrolling, and professional value proposition.
+  2. *Inspect Commercial Builds:* Scrolls to `#featured-work` or navigates to `/projects` to inspect real-world builds (such as *Maa Kamakhya Hydraulic* or *Jay Hanuman Astro Research Centre*).
+  3. *Read About & Mindset (`/about`):* Reviews engineering philosophy, focus on clean architecture, and technical communication.
+  4. *Navigate to Contact:* Either scrolls to `#contact-cta` on the homepage or visits `/contact` to submit project scope.
+- **Important Decisions Addressed:**
+  - *"Can this developer deliver a polished, reliable digital product?"* (Addressed by documented commercial case studies and professional UI standards).
+  - *"How can I initiate a project discussion?"* (Addressed by clear inquiry options, direct email fallback, and timezone indicator `[REQUIRES USER CONFIRMATION: Location & Timezone]`).
+- **Primary Conversion Action:** Submitting an inquiry on `/contact` or using the direct email fallback.
+- **Potential Friction Points & Architectural Solutions:**
+  - *Friction:* Complex jargon that obscures practical deliverables.  
+    *Solution:* Case studies lead with plain-language problem/solution summaries followed by technical details.
+  - *Friction:* Unclear availability, location, or response expectations.  
+    *Solution:* Configurable availability beacon and local timezone widget (`[REQUIRES USER CONFIRMATION: Location & Timezone]`), with response turnaround targets clearly marked as proposed targets (`[REQUIRES USER CONFIRMATION: Proposed response window, e.g. 24–48 hours]`). No fabricated commercial guarantees or delivery promises.
 
 ---
 
 ### Journey D — The Mobile Visitor / Commuting Recruiter
-- **Persona Context:** Reviewing candidate profiles on an iPhone or Android phone during transit or between meetings. Extremely sensitive to touch responsiveness, thumb ergonomics, and readable font sizes.
-- **Entry Point:** Mobile browser via LinkedIn / X / email link.
+- **Persona Context:** Reviewing portfolio on a mobile device (iOS/Android) during transit. Extremely sensitive to touch responsiveness, thumb ergonomics, safe areas, and readable font sizes.
+- **Entry Point:** Mobile browser via LinkedIn, GitHub, or direct shared link.
 - **Navigation Path:**
-  1. *Land on Mobile Hero:* 3D sculpture occupies top 40vh of screen; headline and primary CTA (`Explore Work`) are centered directly within thumb-reach zone in bottom 60vh.
-  2. *Quick Nav via Bottom HUD:* Sees persistent floating action pill at bottom of screen with `Resume ↓` and `Let's Talk ↗`.
-  3. *Scroll Through Stacked Projects:* Swipes smoothly down a single-column editorial stream of project cards with crisp, legible typography on solid white cards.
-  4. *Tap Project Card:* Navigates to `/projects/:slug` with zero horizontal overflow, reading structured technical specifications.
-  5. *Tap Floating Contact CTA:* Bottom HUD trigger instantly opens the mobile contact sheet.
-- **Important Decisions:**
-  - *"Is this site usable on my phone, or is it laggy and broken?"* (Resolved by 60 FPS mobile optimization or instant static WebP fallback on low-power devices).
-  - *"Can I easily read the text without zooming?"* (Resolved by responsive mobile typography scale: 14px body text, 48px touch targets).
-- **Primary Conversion Action:** Tapping `Resume ↓` in bottom HUD or tapping `Let's Talk` to launch native mobile mail client.
-- **Possible Friction Points & Architectural Solutions:**
-  - *Friction:* 3D canvas capturing swipe gestures and preventing document scrolling.  
-    *Solution:* Canvas container has `pointer-events: none`; document touch-scroll flows naturally without gesture trapping.
-  - *Friction:* Floating bottom HUD occluding footer links, form submit buttons, or OS home indicator.  
-    *Solution:* Bottom HUD integrates `env(safe-area-inset-bottom)` padding, auto-collapses on fast downward scroll, and pages include bottom margin buffers (`mb-24`) to eliminate collision.
-  - *Friction:* Tiny buttons that cause mis-taps.  
-    *Solution:* All mobile interactive hit areas strictly adhere to `>= 48px × 48px`.
+  1. *Land on Mobile Hero:* Responsive layout where 3D canvas acts as ambient background without interfering with vertical touch scrolling. Headline and primary CTA (`Explore Selected Work` -> `#featured-work`) are comfortably positioned within thumb reach.
+  2. *Quick Nav via Floating Bottom HUD:* Observes compact bottom HUD with `Resume ↓` (`[REQUIRES USER CONFIRMATION: Resume asset]`) and `Let's Talk ↗` (`#contact-cta`).
+  3. *Scroll Through Project Stream:* Swipes down single-column cards with responsive typography and high-contrast styling.
+  4. *Tap Project Card:* Navigates to `/projects/:slug` with responsive layout and zero horizontal overflow.
+  5. *Access Contact Options:* Taps floating `Let's Talk ↗` to trigger contact shortcut or navigates to dedicated `/contact` page.
+- **Important Decisions Addressed:**
+  - *"Is the mobile experience responsive, legible, and smooth?"* (Addressed by responsive typography scale, touch-target standards, and capability-aware rendering).
+  - *"Can I access resume and contact without hunting through menus?"* (Addressed by persistent bottom HUD actions).
+- **Primary Conversion Action:** Accessing resume (`[REQUIRES USER CONFIRMATION: Resume asset]`) or launching native mail client / contact form.
+- **Interaction & Ergonomics Rules:**
+  - **Pointer vs Touch Modality Separation:**
+    - *Desktop:* Canvas pointer interaction is active, responding to cursor movement for subtle parallax and camera rotation, with DOM text sitting on an isolated overlay.
+    - *Mobile/Touch:* Touch gestures are reserved for native vertical document scrolling. The canvas container implements passive pointer event handling and `touch-action: pan-y` so vertical swipe gestures scroll naturally without being captured by 3D orbit controls. Desktop pointer interactivity remains completely intact.
+  - **Mobile Bottom HUD Collision & Safe Areas:**
+    - *Safe-Area Inset Handling:* Positioned with dynamic calculation: `bottom: calc(16px + env(safe-area-inset-bottom, 0px))` to eliminate collision with OS navigation bars.
+    - *Scroll-Aware Auto-Collapse:* Translates downward (`translateY(120%)`) during rapid downward scroll to maximize reading area, and re-appears (`translateY(0%)`) on upward scroll or when reaching the bottom of the page.
+    - *Bottom Margin Buffer:* All page containers include an `80px–96px` bottom padding buffer (`padding-bottom: 96px`) ensuring the floating HUD never occludes interactive form submit buttons, direct email copy pills, or footer navigation links.
+  - **Contact Flow Resilience:** The mobile contact sheet/modal acts as an optional quick shortcut; the full dedicated canonical `/contact` route remains directly accessible via the top mobile menu at all times.
+  - **Responsive Layout References:** Viewport height distributions (e.g. 40vh 3D canvas / 60vh content stream) are treated as responsive design reference guidelines across diverse screen ratios, not rigid universal constraints.
 
 ---
 
-## 3. Journey Friction Elimination Matrix
+## 3. Journey Friction Elimination Matrix & Performance Targets
 
-| Journey | Potential Friction Point | Architectural Countermeasure | Success Metric |
+All numerical performance and usability figures represent **proposed engineering targets** with explicit measurement criteria, not claimed achievements prior to implementation:
+
+| Journey | Potential Friction Point | Architectural Countermeasure | Proposed Target & Measurement Method |
 | :--- | :--- | :--- | :--- |
-| **Recruiter** | Can't find resume in < 5 seconds. | Direct `Resume ↗` link in persistent floating header on all pages. | Resume access time `< 3s`. |
-| **Recruiter** | Skills buried inside narrative paragraphs. | Dedicated 3-column `#expertise` matrix with instant keyword chips. | Stack scan time `< 10s`. |
-| **Tech Visitor** | Claims lack verification. | Explicitly separate `Verified Implemented Features` from `Planned Roadmap`. | Zero perceived credibility loss. |
-| **Client** | Confusing or broken forms. | Native client-side validation with instant visual feedback and copyable direct email. | Form completion rate `> 85%`. |
-| **Mobile** | Laggy 3D canvas draining battery. | Automated device capability check falling back to lightweight WebP render. | Consistent 60 FPS scroll. |
+| **Recruiter** | Cannot locate resume rapidly. | Direct `Resume ↗` link in persistent floating header on all pages. | **Target: < 3s** to locate and initiate download. *Measured via:* Timed desktop/mobile usability audit. |
+| **Recruiter** | Skills buried inside narrative paragraphs. | Dedicated 3-column `#expertise` matrix with instant keyword chips. | **Target: < 10s** to scan relevant stack category. *Measured via:* Persona scannability protocol. |
+| **Tech Visitor** | Claims lack empirical verification. | Explicitly separate `Verified Implemented Features` from `Planned Roadmap`. | **Target: 100% verification fidelity.** All repos checked against confirmed GitHub repos; unconfirmed items flagged. |
+| **Client** | Form abandonment or third-party service outage. | Client-side input validation with instant visual feedback and copyable direct `mailto:` fallback. | **Target: Zero unrecoverable form abandonment.** Tracked via client-side error telemetry and direct email fallback. |
+| **Mobile** | Unresponsive scrolling or battery drain from 3D canvas. | Capability-aware rendering: lightweight CSS static fallback for low-tier devices or `prefers-reduced-motion: reduce`. | **Target: 60 FPS smooth scroll** (minimum acceptable: 30 FPS on low-power devices). *Measured via:* Chrome DevTools Performance trace on mid-tier mobile hardware. |
+
+---
+
+## 4. Canonical Route Consistency
+
+To prevent routing fragmentation, all Phase 03 documentation strictly adheres to these five canonical routes:
+
+| Canonical Route | Route Purpose | Aliases / Redirect Policy |
+| :--- | :--- | :--- |
+| `/` | Root Homepage (Hero, Featured Work, Expertise, Journey, Contact CTA, Footer) | Standard root |
+| `/projects` | Canonical All-Projects Archive & Filterable Catalog | Any reference to `/work` is strictly treated as an optional alias/redirect requiring approval; `/projects` is canonical. |
+| `/projects/:slug` | Deep-Dive Project Case Studies (Four Portfolio Project Candidates — Pending Individual Verification) | Direct slug paths (e.g., `/projects/weathersentinel`) |
+| `/about` | Extended Biography, Engineering Mindset & Tooling Setup | Canonical about page |
+| `/contact` | Dedicated Collaboration & Inquiries Portal | Canonical contact page |
