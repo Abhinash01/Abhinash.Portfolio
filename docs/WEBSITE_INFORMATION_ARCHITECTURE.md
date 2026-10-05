@@ -56,7 +56,7 @@ The portfolio is structured as a high-performance single-page application with d
 - **Components:**
   - Multi-tag category filter (`All`, `Full-Stack Systems`, `Enterprise & Commercial`, `Dashboards & Utilities`).
   - Search input with instant client-side filtering.
-  - Card/Table toggle view (Card view for visual exploration; Table/List view for dense, fast technical review).
+  - Card/Table toggle view (Card view for visual exploration; Table/List view for dense, fast technical review)
 
 ### 2.3 Individual Project Case Study Route (`/projects/:slug`)
 - **Primary Goal:** Deep-dive technical validation demonstrating engineering rigor.
@@ -123,3 +123,4 @@ The portfolio is structured as a high-performance single-page application with d
 ```
 - **Primary Need:** High visual taste, bespoke interactions, and smooth animations that push web standards.
 - **Design Adaptation:** High-key lighting, kinetic 3D scene, and refined GSAP choreography.
+
