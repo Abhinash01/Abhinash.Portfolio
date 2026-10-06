@@ -1,12 +1,19 @@
 import React from 'react'
+import { Section } from '../components/ui/Section'
+import { ProjectList } from '../components/project/ProjectList'
+import { getAllProjects } from '../data/projects'
 
 export const ProjectsPage: React.FC = () => {
+  const projects = getAllProjects()
+
   return (
-    <main className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold tracking-tight">Projects Archive</h1>
-      <p className="mt-2 text-slate-600">
-        Selected technical projects and case studies.
-      </p>
-    </main>
+    <Section
+      id="archive"
+      eyebrow="// ARCHIVE DIRECTORY"
+      title="Complete Projects Archive"
+      subtitle="Comprehensive technical catalog of full-stack applications, industrial web portals, and client systems."
+    >
+      <ProjectList projects={projects} columns={2} />
+    </Section>
   )
 }
