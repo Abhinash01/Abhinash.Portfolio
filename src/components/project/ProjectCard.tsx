@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <article
-      className={`group bg-white rounded-lg border border-[#E5EAF1] p-6 hover:border-[#CBD5E1] transition-all flex flex-col justify-between ${
+      className={`group bg-white rounded-lg border border-[#E5EAF1] p-6 sm:p-7 hover:border-[#CBD5E1] hover:shadow-[0_12px_24px_-4px_rgba(17,24,39,0.06)] hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between focus-within:ring-2 focus-within:ring-[#4169E1] focus-within:ring-offset-2 ${
         featured ? 'shadow-sm' : ''
       } ${className}`}
     >
@@ -37,13 +37,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
 
-        <h3 className="text-xl font-bold text-[#111827] group-hover:text-[#4169E1] transition-colors">
-          <Link to={`/projects/${project.projectSlug}`}>
+        <h3 className="font-display text-xl font-bold text-[#111827] group-hover:text-[#4169E1] transition-colors tracking-tight">
+          <Link to={`/projects/${project.projectSlug}`} className="focus:outline-none">
             {project.projectTitle}
           </Link>
         </h3>
 
-        <p className="mt-2 text-sm text-[#64748B] line-clamp-3 leading-relaxed">
+        <p className="mt-2 text-sm text-[#64748B] line-clamp-3 leading-relaxed font-sans">
           {project.shortDescription}
         </p>
 

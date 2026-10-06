@@ -1,15 +1,289 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   AG-PRECISION DESIGN SYSTEM (PHASE 08: GLOBAL STYLING & TOKENS)
+   Baseline: Phase 05 Design System Specification & Token Architecture
+   Aesthetic: Minimal Luxury + Cinematic 3D Spatial Presence
+   ========================================================================== */
+
+@theme {
+  /* Colors */
+  --color-canvas: #F6F9FC;
+  --color-canvas-contrast: #101827;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #EEF2F8;
+  --color-surface-nav: rgba(255, 255, 255, 0.92);
+  --color-surface-scrim: rgba(246, 249, 252, 0.95);
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #64748B;
+  --color-text-tertiary: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+
+  --color-accent: #4169E1;
+  --color-accent-hover: #3154C4;
+  --color-accent-active: #2544A5;
+  --color-accent-subtle: #EFF3FE;
+
+  --color-navy: #101827;
+  --color-navy-hover: #1E293B;
+  --color-navy-active: #0B1120;
+
+  --color-border-subtle: #E5EAF1;
+  --color-border-muted: #F1F5F9;
+  --color-border-hover: #CBD5E1;
+  --color-border-focus: #4169E1;
+
+  --color-status-success: #059669;
+  --color-status-success-bg: #ECFDF5;
+  --color-status-warning: #D97706;
+  --color-status-warning-bg: #FFFBEB;
+  --color-status-error: #DC2626;
+  --color-status-error-bg: #FEF2F2;
+
+  /* Typography Stacks */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.03);
+  --shadow-lg: 0 12px 24px -4px rgba(17, 24, 39, 0.06), 0 4px 8px -2px rgba(17, 24, 39, 0.03);
+  --shadow-nav: 0 8px 20px -2px rgba(17, 24, 39, 0.06);
+
+  /* Breakpoints */
+  --breakpoint-mobile-sm: 320px;
+  --breakpoint-mobile-std: 375px;
+  --breakpoint-mobile-base: 390px;
+  --breakpoint-mobile-lg: 430px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-desktop-lg: 1280px;
+  --breakpoint-desktop-xl: 1440px;
+}
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (SYSTEM RUNTIME VARIABLES)
+   ========================================================================== */
+
 :root {
+  /* Color Tokens */
+  --color-canvas: #F6F9FC;
+  --color-canvas-contrast: #101827;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #EEF2F8;
+  --color-surface-nav: rgba(255, 255, 255, 0.92);
+  --color-surface-scrim: rgba(246, 249, 252, 0.95);
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #64748B;
+  --color-text-tertiary: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+  --color-text-accent: #4169E1;
+
+  --color-accent: #4169E1;
+  --color-accent-hover: #3154C4;
+  --color-accent-active: #2544A5;
+  --color-accent-subtle: #EFF3FE;
+
+  --color-navy: #101827;
+  --color-navy-hover: #1E293B;
+  --color-navy-active: #0B1120;
+
+  --color-border: #E5EAF1;
+  --color-border-muted: #F1F5F9;
+  --color-border-hover: #CBD5E1;
+  --color-border-focus: #4169E1;
+
+  --color-status-success: #059669;
+  --color-status-success-bg: #ECFDF5;
+  --color-status-warning: #D97706;
+  --color-status-warning-bg: #FFFBEB;
+  --color-status-error: #DC2626;
+  --color-status-error-bg: #FEF2F2;
+
+  --color-focus-ring: rgba(65, 105, 225, 0.40);
+
+  /* Typography Stacks */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Spacing Scale (4px/8px modular rhythm) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+
+  /* Layout Boundaries */
+  --layout-max-width: 1280px;
+  --layout-nav-width: 1080px;
+  --layout-text-measure: 680px;
+  --layout-gutter-desktop: 32px;
+  --layout-gutter-tablet: 24px;
+  --layout-gutter-mobile: 16px;
+
+  /* Sizing Tokens */
+  --size-touch-target: 48px;
+  --size-nav-height: 56px;
+  --size-button-height: 44px;
+  --size-input-height: 48px;
+
+  /* Radius Tokens */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.03);
+  --shadow-lg: 0 12px 24px -4px rgba(17, 24, 39, 0.06), 0 4px 8px -2px rgba(17, 24, 39, 0.03);
+  --shadow-nav: 0 8px 20px -2px rgba(17, 24, 39, 0.06);
+
+  /* Z-Index Hierarchy */
+  --z-background: -1;
+  --z-canvas3d: 0;
+  --z-scrim: 5;
+  --z-content: 10;
+  --z-sticky: 30;
+  --z-nav: 40;
+  --z-hud: 45;
+  --z-drawer: 50;
+  --z-modal: 60;
+  --z-preloader: 100;
+
+  /* Motion Tokens (Design references) */
+  --motion-duration-instant: 0ms;
+  --motion-duration-fast: 150ms;
+  --motion-duration-standard: 250ms;
+  --motion-duration-slow: 400ms;
+  --motion-duration-cinematic: 700ms;
+  --motion-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* 3D Viewport Target Dimensions */
+  --3d-canvas-height-desktop: 560px;
+  --3d-canvas-height-tablet: 380px;
+  --3d-canvas-height-mobile: 280px;
+
   color-scheme: light;
+}
+
+/* ==========================================================================
+   GLOBAL ELEMENT NORMALIZATION & ACCESSIBILITY BASELINE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #F6F9FC;
-  color: #111827;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: 0;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+p {
+  margin-top: 0;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--motion-duration-fast) var(--motion-ease-default);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Accessible Keyboard Focus Foundation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Global Reduced-Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
