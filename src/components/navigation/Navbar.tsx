@@ -1,35 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from '../ui/Button'
-
-export interface NavItem {
-  readonly label: string
-  readonly path: string
-}
-
-export const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Work', path: '/projects' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-]
+import {
+  siteConfig,
+  PRIMARY_NAV_ITEMS,
+  PRIMARY_CTA,
+  isRouteActive,
+} from '../../config'
 
 export const Navbar: React.FC = () => {
   const location = useLocation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  // Route-aware active state determination
-  const isNavActive = (path: string): boolean => {
-    if (path === '/projects') {
-      return location.pathname === '/projects' || location.pathname.startsWith('/projects/')
-    }
-    if (path === '/about') {
-      return location.pathname === '/about' || location.pathname.startsWith('/about/')
-    }
-    if (path === '/contact') {
-      return location.pathname === '/contact' || location.pathname.startsWith('/contact/')
-    }
-    return false
-  }
 
   // Close mobile drawer on route transition
   useEffect(() => {
@@ -64,24 +45,24 @@ export const Navbar: React.FC = () => {
         <Link
           to="/"
           className="flex items-center space-x-3 group rounded-md p-1 -m-1 focus-visible:outline-2 focus-visible:outline-[#4169E1]"
-          aria-label="Abhinash Gupta Portfolio Home"
+          aria-label={`${siteConfig.name} Portfolio Home`}
         >
           <span className="w-8 h-8 rounded bg-[#101827] text-white flex items-center justify-center font-display font-bold text-xs tracking-wider transition-colors duration-200 group-hover:bg-[#4169E1]">
-            AG
+            {siteConfig.shortName}
           </span>
           <span className="font-display font-semibold text-sm tracking-wider text-[#111827] uppercase">
-            ABHINASH GUPTA
+            {siteConfig.name.toUpperCase()}
           </span>
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8" aria-label="Primary Navigation">
-          {NAV_ITEMS.map((item) => {
-            const active = isNavActive(item.path)
+          {PRIMARY_NAV_ITEMS.map((item) => {
+            const active = isRouteActive(location.pathname, item.href, item.matchPrefix)
             return (
               <Link
-                key={item.path}
-                to={item.path}
+                key={item.href}
+                to={item.href}
                 aria-current={active ? 'page' : undefined}
                 className={`text-sm font-medium transition-colors relative py-1.5 focus-visible:outline-2 focus-visible:outline-[#4169E1] focus-visible:rounded ${
                   active
@@ -103,17 +84,19 @@ export const Navbar: React.FC = () => {
 
         {/* CTA & Availability Beacon */}
         <div className="hidden md:flex items-center space-x-5">
-          <div className="hidden lg:flex items-center space-x-2 text-xs text-[#64748B] select-none">
-            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
-            <span className="font-mono text-xs">Available</span>
-          </div>
+          {siteConfig.status.isAvailable && (
+            <div className="hidden lg:flex items-center space-x-2 text-xs text-[#64748B] select-none">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
+              <span className="font-mono text-xs">{siteConfig.status.shortLabel}</span>
+            </div>
+          )}
           <Button
-            href="/contact"
+            href={PRIMARY_CTA.href}
             variant="dark"
             size="sm"
             className="font-mono text-xs uppercase tracking-wider"
           >
-            LET'S TALK
+            {PRIMARY_CTA.label}
           </Button>
         </div>
 
@@ -176,12 +159,12 @@ export const Navbar: React.FC = () => {
             >
               Home
             </Link>
-            {NAV_ITEMS.map((item) => {
-              const active = isNavActive(item.path)
+            {PRIMARY_NAV_ITEMS.map((item) => {
+              const active = isRouteActive(location.pathname, item.href, item.matchPrefix)
               return (
                 <Link
-                  key={item.path}
-                  to={item.path}
+                  key={item.href}
+                  to={item.href}
                   aria-current={active ? 'page' : undefined}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-3 py-2.5 rounded-md text-base font-medium flex items-center justify-between transition-colors ${
@@ -201,18 +184,20 @@ export const Navbar: React.FC = () => {
 
           {/* Status Beacon & Quick CTA inside Mobile Drawer */}
           <div className="pt-4 border-t border-[#E5EAF1] space-y-3">
-            <div className="flex items-center space-x-2 px-3 text-xs text-[#64748B]">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
-              <span className="font-mono">Available for opportunities</span>
-            </div>
+            {siteConfig.status.isAvailable && (
+              <div className="flex items-center space-x-2 px-3 text-xs text-[#64748B]">
+                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
+                <span className="font-mono">{siteConfig.status.description}</span>
+              </div>
+            )}
             <Button
-              href="/contact"
+              href={PRIMARY_CTA.href}
               variant="dark"
               size="md"
               className="w-full font-mono text-xs uppercase tracking-wider"
               onClick={() => setMobileMenuOpen(false)}
             >
-              LET'S TALK
+              {PRIMARY_CTA.label}
             </Button>
           </div>
         </div>

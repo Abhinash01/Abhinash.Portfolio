@@ -1,4 +1,4 @@
-import type { Project } from '../types/project.types'
+import type { Project, ProjectCategory } from '../types/project.types'
 
 export const PROJECTS: readonly Project[] = [
   {
@@ -177,4 +177,33 @@ export function getProjectBySlug(slug: string): Project | undefined {
       p.projectSlug.toLowerCase().replace(/[^a-z0-9]/g, '') === normalized ||
       p.id.toLowerCase().replace(/[^a-z0-9]/g, '') === normalized,
   )
+}
+
+export function getProjectsByCategory(category: ProjectCategory): readonly Project[] {
+  return PROJECTS.filter((p) => p.category === category)
+}
+
+export function getAllProjectCategories(): readonly ProjectCategory[] {
+  return Array.from(new Set(PROJECTS.map((p) => p.category)))
+}
+
+export function getAdjacentProjects(slug: string): {
+  readonly prev: Project | undefined
+  readonly next: Project | undefined
+} {
+  const normalized = slug.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const index = PROJECTS.findIndex(
+    (p) =>
+      p.projectSlug.toLowerCase().replace(/[^a-z0-9]/g, '') === normalized ||
+      p.id.toLowerCase().replace(/[^a-z0-9]/g, '') === normalized,
+  )
+
+  if (index === -1) {
+    return { prev: undefined, next: undefined }
+  }
+
+  const prev = index > 0 ? PROJECTS[index - 1] : undefined
+  const next = index < PROJECTS.length - 1 ? PROJECTS[index + 1] : undefined
+
+  return { prev, next }
 }
