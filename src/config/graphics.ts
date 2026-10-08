@@ -1,9 +1,15 @@
 /**
- * Future Graphics / 3D configuration boundary (preparatory definitions for Phase 11+).
- * Does not import or instantiate Three.js / WebGL / R3F scenes.
+ * Graphics & 3D configuration settings for Three.js / R3F scenes.
  */
 
 export type GraphicsQualityTier = 'low' | 'medium' | 'high' | 'auto'
+
+export interface HeroScenePreferences {
+  readonly monolithRotationSpeed: number
+  readonly ringsRotationSpeed: number
+  readonly microSphereCount: number
+  readonly microSphereCountMobile: number
+}
 
 export interface GraphicsPreferences {
   readonly defaultTier: GraphicsQualityTier
@@ -12,6 +18,7 @@ export interface GraphicsPreferences {
   readonly antialiasing: boolean
   readonly shadowsEnabled: boolean
   readonly respectReducedMotion: boolean
+  readonly hero: HeroScenePreferences
 }
 
 export const GRAPHICS_CONFIG: GraphicsPreferences = {
@@ -21,4 +28,10 @@ export const GRAPHICS_CONFIG: GraphicsPreferences = {
   antialiasing: true,
   shadowsEnabled: true,
   respectReducedMotion: true,
+  hero: {
+    monolithRotationSpeed: 0.15,
+    ringsRotationSpeed: 0.18,
+    microSphereCount: 12,
+    microSphereCountMobile: 6,
+  },
 }
