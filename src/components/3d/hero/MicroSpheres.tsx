@@ -57,10 +57,13 @@ export const MicroSpheres: React.FC<MicroSpheresProps> = ({
       {spheres.map((sphere, index) => (
         <mesh key={index} position={sphere.position}>
           <sphereGeometry args={[sphere.radius, 16, 16]} />
-          <meshStandardMaterial
+          <meshPhysicalMaterial
             color={sphere.isAccent ? '#4169E1' : '#E2E8F0'}
-            metalness={sphere.isAccent ? 0.8 : 0.92}
-            roughness={0.2}
+            metalness={sphere.isAccent ? 0.72 : 0.9}
+            roughness={sphere.isAccent ? 0.18 : 0.16}
+            clearcoat={sphere.isAccent ? 0.45 : 0.3}
+            clearcoatRoughness={sphere.isAccent ? 0.12 : 0.15}
+            envMapIntensity={sphere.isAccent ? 1.1 : 1.0}
           />
         </mesh>
       ))}

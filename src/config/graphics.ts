@@ -9,6 +9,7 @@ export interface HeroScenePreferences {
   readonly ringsRotationSpeed: number
   readonly microSphereCount: number
   readonly microSphereCountMobile: number
+  readonly environmentResolution: number
 }
 
 export interface GraphicsPreferences {
@@ -33,5 +34,6 @@ export const GRAPHICS_CONFIG: GraphicsPreferences = {
     ringsRotationSpeed: 0.18,
     microSphereCount: 12,
     microSphereCountMobile: 6,
+    environmentResolution: 256,
   },
 }

@@ -11,7 +11,7 @@ export interface MonolithProps {
 
 /**
  * Primary Architectural Beveled Monolith Sculpture with Inner Polyhedral Facet.
- * Represents the central kinetic core of the hero environment.
+ * Refined with multi-layer MeshPhysicalMaterial, clearcoat bevel glints, and flat-shaded core facets.
  */
 export const Monolith: React.FC<MonolithProps> = ({
   isReducedMotion = false,
@@ -42,7 +42,7 @@ export const Monolith: React.FC<MonolithProps> = ({
 
   return (
     <group ref={monolithGroupRef} position={[0, 0, 0]}>
-      {/* Outer Beveled Geometric Monolith */}
+      {/* Outer Beveled Geometric Monolith - Satin Platinum Chrome with Optical Clearcoat */}
       <RoundedBox
         args={dimensions}
         radius={0.12}
@@ -50,21 +50,28 @@ export const Monolith: React.FC<MonolithProps> = ({
         castShadow
         receiveShadow
       >
-        <meshStandardMaterial
+        <meshPhysicalMaterial
           color="#F8FAFC"
-          metalness={0.88}
-          roughness={0.16}
-          envMapIntensity={1.2}
+          metalness={0.82}
+          roughness={0.24}
+          clearcoat={0.35}
+          clearcoatRoughness={0.18}
+          reflectivity={0.7}
+          envMapIntensity={1.1}
         />
       </RoundedBox>
 
-      {/* Inner Concentric Polyhedron (Architectural Core Facet) */}
+      {/* Inner Concentric Polyhedron - Deep Navy Core with Crisp Flat-Shaded Facets */}
       <mesh ref={innerFacetRef} position={[0, 0, 0]}>
         <octahedronGeometry args={[isMobile ? 0.45 : 0.55, 0]} />
-        <meshStandardMaterial
-          color="#101827"
-          metalness={0.94}
-          roughness={0.2}
+        <meshPhysicalMaterial
+          color="#0F172A"
+          metalness={0.72}
+          roughness={0.22}
+          clearcoat={0.5}
+          clearcoatRoughness={0.15}
+          flatShading={true}
+          envMapIntensity={1.2}
         />
       </mesh>
     </group>
