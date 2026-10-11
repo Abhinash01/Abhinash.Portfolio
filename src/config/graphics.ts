@@ -12,6 +12,15 @@ export interface HeroScenePreferences {
   readonly environmentResolution: number
 }
 
+export interface InteractionPreferences {
+  readonly enabled: boolean
+  readonly maxRotationX: number
+  readonly maxRotationY: number
+  readonly cameraParallaxX: number
+  readonly cameraParallaxY: number
+  readonly damping: number
+}
+
 export interface GraphicsPreferences {
   readonly defaultTier: GraphicsQualityTier
   readonly targetFrameRate: number
@@ -20,6 +29,7 @@ export interface GraphicsPreferences {
   readonly shadowsEnabled: boolean
   readonly respectReducedMotion: boolean
   readonly hero: HeroScenePreferences
+  readonly interaction: InteractionPreferences
 }
 
 export const GRAPHICS_CONFIG: GraphicsPreferences = {
@@ -35,5 +45,13 @@ export const GRAPHICS_CONFIG: GraphicsPreferences = {
     microSphereCount: 12,
     microSphereCountMobile: 6,
     environmentResolution: 256,
+  },
+  interaction: {
+    enabled: true,
+    maxRotationX: 0.10,
+    maxRotationY: 0.18,
+    cameraParallaxX: 0.18,
+    cameraParallaxY: 0.12,
+    damping: 3.8,
   },
 }

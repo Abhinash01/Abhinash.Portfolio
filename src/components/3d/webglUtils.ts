@@ -29,3 +29,15 @@ export function prefersReducedMotion(): boolean {
 
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
+
+/**
+ * Checks whether the primary pointer device has fine accuracy (e.g. mouse or precise trackpad).
+ */
+export function hasFinePointer(): boolean {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  return window.matchMedia('(pointer: fine)').matches
+}
+
