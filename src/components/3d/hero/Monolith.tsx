@@ -42,7 +42,7 @@ export const Monolith: React.FC<MonolithProps> = ({
 
   return (
     <group ref={monolithGroupRef} position={[0, 0, 0]}>
-      {/* Outer Beveled Geometric Monolith - Satin Platinum Chrome with Optical Clearcoat */}
+      {/* Outer Beveled Geometric Monolith - Luminous Satin Chrome with Crisp Clearcoat */}
       <RoundedBox
         args={dimensions}
         radius={0.12}
@@ -51,27 +51,27 @@ export const Monolith: React.FC<MonolithProps> = ({
         receiveShadow
       >
         <meshPhysicalMaterial
-          color="#F8FAFC"
-          metalness={0.82}
-          roughness={0.24}
-          clearcoat={0.35}
-          clearcoatRoughness={0.18}
-          reflectivity={0.7}
-          envMapIntensity={1.1}
+          color="#F1F5F9"
+          metalness={0.85}
+          roughness={0.20}
+          clearcoat={0.45}
+          clearcoatRoughness={0.14}
+          reflectivity={0.75}
+          envMapIntensity={1.3}
         />
       </RoundedBox>
 
-      {/* Inner Concentric Polyhedron - Deep Navy Core with Crisp Flat-Shaded Facets */}
+      {/* Inner Concentric Polyhedron - Deep Obsidian Core with Specular Facets */}
       <mesh ref={innerFacetRef} position={[0, 0, 0]}>
         <octahedronGeometry args={[isMobile ? 0.45 : 0.55, 0]} />
         <meshPhysicalMaterial
-          color="#0F172A"
-          metalness={0.72}
-          roughness={0.22}
-          clearcoat={0.5}
-          clearcoatRoughness={0.15}
+          color="#090E1A"
+          metalness={0.80}
+          roughness={0.16}
+          clearcoat={0.70}
+          clearcoatRoughness={0.10}
           flatShading={true}
-          envMapIntensity={1.2}
+          envMapIntensity={1.5}
         />
       </mesh>
     </group>

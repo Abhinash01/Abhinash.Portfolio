@@ -49,12 +49,12 @@ export const OrbitalRings: React.FC<OrbitalRingsProps> = ({
       >
         <torusGeometry args={[isMobile ? 1.5 : 1.85, 0.02, 16, 80]} />
         <meshPhysicalMaterial
-          color="#1E293B"
-          metalness={0.92}
-          roughness={0.2}
-          clearcoat={0.35}
-          clearcoatRoughness={0.15}
-          envMapIntensity={1.0}
+          color="#1E2638"
+          metalness={0.95}
+          roughness={0.18}
+          clearcoat={0.40}
+          clearcoatRoughness={0.14}
+          envMapIntensity={1.2}
         />
       </mesh>
 
@@ -66,11 +66,11 @@ export const OrbitalRings: React.FC<OrbitalRingsProps> = ({
         <torusGeometry args={[isMobile ? 1.9 : 2.35, 0.022, 16, 96]} />
         <meshPhysicalMaterial
           color="#334155"
-          metalness={0.88}
-          roughness={0.26}
-          clearcoat={0.25}
-          clearcoatRoughness={0.2}
-          envMapIntensity={1.0}
+          metalness={0.90}
+          roughness={0.22}
+          clearcoat={0.30}
+          clearcoatRoughness={0.18}
+          envMapIntensity={1.1}
         />
       </mesh>
 
@@ -82,11 +82,11 @@ export const OrbitalRings: React.FC<OrbitalRingsProps> = ({
         >
           <torusGeometry args={[2.75, 0.016, 16, 100]} />
           <meshPhysicalMaterial
-            color="#64748B"
-            metalness={0.82}
-            roughness={0.32}
-            clearcoat={0.15}
-            clearcoatRoughness={0.25}
+            color="#778397"
+            metalness={0.86}
+            roughness={0.26}
+            clearcoat={0.25}
+            clearcoatRoughness={0.20}
             envMapIntensity={1.0}
           />
         </mesh>

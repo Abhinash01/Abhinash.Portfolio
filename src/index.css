@@ -7,39 +7,39 @@
    ========================================================================== */
 
 @theme {
-  /* Colors */
-  --color-canvas: #F6F9FC;
-  --color-canvas-contrast: #101827;
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #EEF2F8;
-  --color-surface-nav: rgba(255, 255, 255, 0.92);
-  --color-surface-scrim: rgba(246, 249, 252, 0.95);
+  /* Colors - Premium Dark Architectural System */
+  --color-canvas: #080B12;
+  --color-canvas-contrast: #F3F5F9;
+  --color-surface: #0D1220;
+  --color-surface-muted: #121927;
+  --color-surface-nav: rgba(8, 11, 18, 0.88);
+  --color-surface-scrim: rgba(8, 11, 18, 0.95);
 
-  --color-text-primary: #111827;
-  --color-text-secondary: #64748B;
-  --color-text-tertiary: #94A3B8;
-  --color-text-inverse: #FFFFFF;
+  --color-text-primary: #F3F5F9;
+  --color-text-secondary: #A1AABC;
+  --color-text-tertiary: #778397;
+  --color-text-inverse: #080B12;
 
-  --color-accent: #4169E1;
-  --color-accent-hover: #3154C4;
-  --color-accent-active: #2544A5;
-  --color-accent-subtle: #EFF3FE;
+  --color-accent: #6C8CFF;
+  --color-accent-hover: #8EA5FF;
+  --color-accent-active: #5373E6;
+  --color-accent-subtle: #141D32;
 
-  --color-navy: #101827;
-  --color-navy-hover: #1E293B;
-  --color-navy-active: #0B1120;
+  --color-navy: #0D1220;
+  --color-navy-hover: #121927;
+  --color-navy-active: #080B12;
 
-  --color-border-subtle: #E5EAF1;
-  --color-border-muted: #F1F5F9;
-  --color-border-hover: #CBD5E1;
-  --color-border-focus: #4169E1;
+  --color-border-subtle: #1A2234;
+  --color-border-muted: #252D3D;
+  --color-border-hover: #3B4863;
+  --color-border-focus: #6C8CFF;
 
-  --color-status-success: #059669;
-  --color-status-success-bg: #ECFDF5;
-  --color-status-warning: #D97706;
-  --color-status-warning-bg: #FFFBEB;
-  --color-status-error: #DC2626;
-  --color-status-error-bg: #FEF2F2;
+  --color-status-success: #34D399;
+  --color-status-success-bg: #062419;
+  --color-status-warning: #FBBF24;
+  --color-status-warning-bg: #261B07;
+  --color-status-error: #F87171;
+  --color-status-error-bg: #2C0F0F;
 
   /* Typography Stacks */
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -53,11 +53,11 @@
   --radius-xl: 12px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.03);
-  --shadow-lg: 0 12px 24px -4px rgba(17, 24, 39, 0.06), 0 4px 8px -2px rgba(17, 24, 39, 0.03);
-  --shadow-nav: 0 8px 20px -2px rgba(17, 24, 39, 0.06);
+  /* Shadows - Deep ambient dark shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-nav: 0 8px 24px rgba(0, 0, 0, 0.55);
 
   /* Breakpoints */
   --breakpoint-mobile-sm: 320px;
@@ -71,46 +71,47 @@
 }
 
 /* ==========================================================================
-   CSS CUSTOM PROPERTIES (SYSTEM RUNTIME VARIABLES)
+   CSS CUSTOM PROPERTIES (SYSTEM RUNTIME VARIABLES - DARK THEME)
    ========================================================================== */
 
 :root {
   /* Color Tokens */
-  --color-canvas: #F6F9FC;
-  --color-canvas-contrast: #101827;
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #EEF2F8;
-  --color-surface-nav: rgba(255, 255, 255, 0.92);
-  --color-surface-scrim: rgba(246, 249, 252, 0.95);
+  --color-canvas: #080B12;
+  --color-canvas-contrast: #F3F5F9;
+  --color-surface: #0D1220;
+  --color-surface-muted: #121927;
+  --color-surface-nav: rgba(8, 11, 18, 0.88);
+  --color-surface-scrim: rgba(8, 11, 18, 0.95);
 
-  --color-text-primary: #111827;
-  --color-text-secondary: #64748B;
-  --color-text-tertiary: #94A3B8;
-  --color-text-inverse: #FFFFFF;
-  --color-text-accent: #4169E1;
+  --color-text-primary: #F3F5F9;
+  --color-text-secondary: #A1AABC;
+  --color-text-tertiary: #778397;
+  --color-text-inverse: #080B12;
+  --color-text-accent: #6C8CFF;
 
-  --color-accent: #4169E1;
-  --color-accent-hover: #3154C4;
-  --color-accent-active: #2544A5;
-  --color-accent-subtle: #EFF3FE;
+  --color-accent: #6C8CFF;
+  --color-accent-hover: #8EA5FF;
+  --color-accent-active: #5373E6;
+  --color-accent-subtle: #141D32;
 
-  --color-navy: #101827;
-  --color-navy-hover: #1E293B;
-  --color-navy-active: #0B1120;
+  --color-navy: #0D1220;
+  --color-navy-hover: #121927;
+  --color-navy-active: #080B12;
 
-  --color-border: #E5EAF1;
-  --color-border-muted: #F1F5F9;
-  --color-border-hover: #CBD5E1;
-  --color-border-focus: #4169E1;
+  --color-border: #252D3D;
+  --color-border-subtle: #1A2234;
+  --color-border-muted: #252D3D;
+  --color-border-hover: #3B4863;
+  --color-border-focus: #6C8CFF;
 
-  --color-status-success: #059669;
-  --color-status-success-bg: #ECFDF5;
-  --color-status-warning: #D97706;
-  --color-status-warning-bg: #FFFBEB;
-  --color-status-error: #DC2626;
-  --color-status-error-bg: #FEF2F2;
+  --color-status-success: #34D399;
+  --color-status-success-bg: #062419;
+  --color-status-warning: #FBBF24;
+  --color-status-warning-bg: #261B07;
+  --color-status-error: #F87171;
+  --color-status-error-bg: #2C0F0F;
 
-  --color-focus-ring: rgba(65, 105, 225, 0.40);
+  --color-focus-ring: rgba(108, 140, 255, 0.45);
 
   /* Typography Stacks */
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -156,12 +157,12 @@
   --radius-xl: 12px;
   --radius-full: 9999px;
 
-  /* Shadows */
+  /* Shadows - Dark Mode */
   --shadow-none: none;
-  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 2px 4px -2px rgba(17, 24, 39, 0.03);
-  --shadow-lg: 0 12px 24px -4px rgba(17, 24, 39, 0.06), 0 4px 8px -2px rgba(17, 24, 39, 0.03);
-  --shadow-nav: 0 8px 20px -2px rgba(17, 24, 39, 0.06);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-nav: 0 8px 24px rgba(0, 0, 0, 0.55);
 
   /* Z-Index Hierarchy */
   --z-background: -1;
@@ -175,7 +176,7 @@
   --z-modal: 60;
   --z-preloader: 100;
 
-  /* Motion Tokens (Design references) */
+  /* Motion Tokens */
   --motion-duration-instant: 0ms;
   --motion-duration-fast: 150ms;
   --motion-duration-standard: 250ms;
@@ -186,11 +187,11 @@
   --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* 3D Viewport Target Dimensions */
-  --3d-canvas-height-desktop: 560px;
-  --3d-canvas-height-tablet: 380px;
-  --3d-canvas-height-mobile: 280px;
+  --3d-canvas-height-desktop: 720px;
+  --3d-canvas-height-tablet: 520px;
+  --3d-canvas-height-mobile: 360px;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 /* ==========================================================================

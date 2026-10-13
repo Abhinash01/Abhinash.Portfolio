@@ -33,15 +33,15 @@ export class CanvasErrorBoundary extends Component<CanvasErrorBoundaryProps, Can
       }
 
       return (
-        <div className="w-full h-full min-h-[240px] flex items-center justify-center bg-[#F6F9FC] border border-[#E5EAF1] rounded-lg p-6 text-center">
+        <div className="w-full h-full min-h-[240px] flex items-center justify-center bg-[#0D1220] border border-[#252D3D] rounded-lg p-6 text-center">
           <div className="max-w-md space-y-2">
-            <span className="font-mono text-xs uppercase tracking-wider text-[#64748B] block">
+            <span className="font-mono text-xs uppercase tracking-wider text-[#778397] block">
               // 3D Canvas Notice
             </span>
-            <p className="text-sm text-[#111827] font-medium">
+            <p className="text-sm text-[#F3F5F9] font-medium">
               3D graphics rendering paused.
             </p>
-            <p className="text-xs text-[#64748B]">
+            <p className="text-xs text-[#A1AABC]">
               Hardware acceleration or WebGL initialization unavailable. All interactive portfolio content remains fully functional.
             </p>
           </div>

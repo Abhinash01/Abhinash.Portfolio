@@ -10,8 +10,8 @@ export const NotFoundPage: React.FC = () => {
       title="Resource Not Found"
       subtitle="The URL path you requested does not correspond to a valid canonical route."
     >
-      <div className="bg-white rounded-lg border border-[#E5EAF1] p-8 max-w-xl text-center space-y-4">
-        <p className="text-sm text-[#64748B]">
+      <div className="bg-[#0D1220] rounded-lg border border-[#252D3D] p-8 max-w-xl text-center space-y-4">
+        <p className="text-sm text-[#A1AABC]">
           Please check the URL or navigate back to the primary portfolio index.
         </p>
         <div className="pt-2">

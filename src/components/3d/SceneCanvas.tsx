@@ -35,15 +35,15 @@ export const SceneCanvas: React.FC<SceneCanvasProps> = ({
 
     return (
       <div
-        className={`flex items-center justify-center bg-[#F6F9FC] border border-[#E5EAF1] rounded-lg p-6 text-center ${className}`}
+        className={`flex items-center justify-center bg-[#0D1220] border border-[#252D3D] rounded-lg p-6 text-center ${className}`}
         role="region"
         aria-label={ariaLabel}
       >
         <div className="max-w-md space-y-1.5">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#64748B] block">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#778397] block">
             // Graphic Canvas
           </span>
-          <p className="text-xs text-[#64748B]">
+          <p className="text-xs text-[#A1AABC]">
             Hardware acceleration inactive. Interactive content and navigation are fully available.
           </p>
         </div>

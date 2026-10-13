@@ -30,17 +30,17 @@ export const Button: React.FC<ButtonProps> = ({
   ariaLabel,
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-sans font-semibold tracking-[0.015em] rounded-full transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4169E1] disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none select-none'
+    'inline-flex items-center justify-center font-sans font-semibold tracking-[0.015em] rounded-full transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6C8CFF] disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none select-none'
 
   const variantStyles: Record<ButtonVariant, string> = {
     primary:
-      'bg-[#4169E1] text-white hover:bg-[#3154C4] active:bg-[#2544A5] hover:-translate-y-px active:translate-y-px active:scale-[0.98] shadow-sm hover:shadow-[0_4px_12px_rgba(65,105,225,0.25)]',
+      'bg-[#6C8CFF] text-[#080B12] hover:bg-[#8EA5FF] active:bg-[#5373E6] hover:-translate-y-px active:translate-y-px active:scale-[0.98] shadow-sm hover:shadow-[0_4px_20px_rgba(108,140,255,0.35)]',
     secondary:
-      'bg-transparent text-[#111827] border border-[#E5EAF1] hover:bg-[#EEF2F8] hover:border-[#CBD5E1] active:bg-[#E2E8F0] hover:-translate-y-px active:translate-y-px active:scale-[0.98] hover:shadow-[0_2px_6px_rgba(17,24,39,0.04)]',
+      'bg-[#121927] text-[#F3F5F9] border border-[#252D3D] hover:bg-[#1A2234] hover:border-[#3B4863] active:bg-[#0D1220] hover:-translate-y-px active:translate-y-px active:scale-[0.98] hover:shadow-[0_4px_16px_rgba(0,0,0,0.4)]',
     dark:
-      'bg-[#101827] text-white border border-[#101827] hover:bg-[#1E293B] hover:border-[#334155] active:bg-[#0B1120] hover:-translate-y-px active:translate-y-px hover:shadow-[0_6px_16px_rgba(16,24,39,0.25)]',
+      'bg-[#141D32] text-[#F3F5F9] border border-[#252D3D] hover:bg-[#1C2744] hover:border-[#6C8CFF]/60 active:bg-[#0D1220] hover:-translate-y-px active:translate-y-px hover:shadow-[0_6px_20px_rgba(0,0,0,0.5)]',
     ghost:
-      'bg-transparent text-[#64748B] hover:text-[#111827] hover:bg-[#EEF2F8] active:bg-[#E2E8F0]',
+      'bg-transparent text-[#A1AABC] hover:text-[#F3F5F9] hover:bg-[#141D32] active:bg-[#121927]',
   }
 
   const sizeStyles: Record<ButtonSize, string> = {

@@ -35,8 +35,8 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
     !isMobile &&
     isFinePointer
 
-  // Responsive scale & position
-  const sceneScale = isMobile ? 0.82 : 1.05
+  // Responsive scale & position (expanded visual presence)
+  const sceneScale = isMobile ? 0.90 : 1.18
   const sphereCount = isMobile
     ? GRAPHICS_CONFIG.hero.microSphereCountMobile
     : GRAPHICS_CONFIG.hero.microSphereCount
@@ -53,7 +53,7 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
   const currentCamY = useRef(0)
 
   // Record base camera position
-  const initialCamPos = useRef<[number, number, number]>([0, 0, 5.6])
+  const initialCamPos = useRef<[number, number, number]>([0, 0, 5.2])
 
   useEffect(() => {
     initialCamPos.current = [camera.position.x, camera.position.y, camera.position.z]
@@ -137,72 +137,79 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
 
   return (
     <>
-      {/* Studio Reflection Environment: 100% offline procedural softbox rig */}
+      {/* Studio Reflection Environment: 100% offline procedural softbox rig tuned for dark space */}
       <Environment resolution={envResolution}>
         <Lightformer
           form="rect"
-          intensity={1.5}
+          intensity={1.8}
           position={[0, 6, -2]}
           scale={[10, 5, 1]}
           color="#FFFFFF"
         />
         <Lightformer
           form="rect"
-          intensity={0.8}
+          intensity={1.1}
           position={[-6, 2, 2]}
           scale={[8, 3, 1]}
-          color="#F1F5F9"
+          color="#6C8CFF"
         />
         <Lightformer
           form="rect"
-          intensity={0.6}
+          intensity={0.7}
           position={[6, -2, 2]}
           scale={[8, 3, 1]}
-          color="#E2E8F0"
+          color="#8EA5FF"
         />
         <Lightformer
           form="ring"
-          intensity={0.5}
+          intensity={0.4}
           position={[0, -4, 0]}
           scale={[6, 6, 1]}
-          color="#F8FAFC"
+          color="#141D32"
         />
       </Environment>
 
-      {/* Studio Lighting Rig: Restrained, architectural illumination */}
+      {/* Studio Lighting Rig: Refined architectural illumination for dark cinematic aesthetic */}
       {/* Ambient gradient sky/ground bounce */}
       <hemisphereLight
-        color="#FFFFFF"
-        groundColor="#CBD5E1"
-        intensity={0.75}
+        color="#475569"
+        groundColor="#080B12"
+        intensity={0.65}
       />
 
       {/* Key directional softbox (Top-Right-Front) */}
       <directionalLight
         position={[5.5, 6.0, 4.5]}
-        intensity={1.6}
-        color="#FFFFFF"
+        intensity={1.85}
+        color="#F8FAFC"
       />
 
       {/* Fill directional light softening deep self-shadows (Left-Mid-Front) */}
       <directionalLight
         position={[-5.0, 2.0, 3.5]}
-        intensity={0.7}
-        color="#F1F5F9"
+        intensity={0.65}
+        color="#1E2638"
       />
 
-      {/* Rim light highlighting satin bevels and separating from canvas (Top-Back) */}
+      {/* Primary Rim light: Electric blue contour separating sculpture from dark void (Top-Back) */}
       <directionalLight
         position={[0.5, 5.0, -5.0]}
-        intensity={1.2}
-        color="#E0E7FF"
+        intensity={1.8}
+        color="#6C8CFF"
       />
 
-      {/* Soft low bounce light preventing overly dark undersides */}
+      {/* Secondary Rim light: Subtle side edge definition (Left-Back) */}
+      <directionalLight
+        position={[-4.0, 3.5, -4.0]}
+        intensity={1.0}
+        color="#8EA5FF"
+      />
+
+      {/* Soft low bounce light preventing completely lost undersides */}
       <directionalLight
         position={[0, -4.0, 2.0]}
-        intensity={0.3}
-        color="#E2E8F0"
+        intensity={0.25}
+        color="#141D32"
       />
 
       {/* Primary Kinetic Monolith & Gyroscope Group (with pointer responsiveness) */}

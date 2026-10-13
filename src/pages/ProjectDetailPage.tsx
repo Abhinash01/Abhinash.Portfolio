@@ -38,34 +38,34 @@ export const ProjectDetailPage: React.FC = () => {
 
         {/* Problem & Objective Breakdown */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg border border-[#E5EAF1] p-6">
-            <h3 className="text-base font-bold text-[#111827] mb-2 font-mono text-xs text-[#4169E1]">
+          <div className="bg-[#0D1220] rounded-lg border border-[#252D3D] p-6">
+            <h3 className="text-base font-bold mb-2 font-mono text-xs text-[#6C8CFF]">
               // PROBLEM STATEMENT
             </h3>
-            <p className="text-sm text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#A1AABC] leading-relaxed">
               {project.problemStatement}
             </p>
           </div>
 
-          <div className="bg-white rounded-lg border border-[#E5EAF1] p-6">
-            <h3 className="text-base font-bold text-[#111827] mb-2 font-mono text-xs text-[#4169E1]">
+          <div className="bg-[#0D1220] rounded-lg border border-[#252D3D] p-6">
+            <h3 className="text-base font-bold mb-2 font-mono text-xs text-[#6C8CFF]">
               // PROJECT OBJECTIVE
             </h3>
-            <p className="text-sm text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#A1AABC] leading-relaxed">
               {project.projectObjective}
             </p>
           </div>
         </div>
 
         {/* Implemented Features */}
-        <div className="bg-white rounded-lg border border-[#E5EAF1] p-6">
-          <h3 className="text-base font-bold text-[#111827] mb-4 font-mono text-xs text-[#059669]">
+        <div className="bg-[#0D1220] rounded-lg border border-[#252D3D] p-6">
+          <h3 className="text-base font-bold mb-4 font-mono text-xs text-[#34D399]">
             // VERIFIED IMPLEMENTED FEATURES
           </h3>
-          <ul className="space-y-2 text-sm text-[#64748B]">
+          <ul className="space-y-2 text-sm text-[#A1AABC]">
             {project.implementedFeatures.map((feature, idx) => (
               <li key={idx} className="flex items-start gap-2">
-                <span className="text-[#059669] font-mono select-none">✓</span>
+                <span className="text-[#34D399] font-mono select-none">✓</span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -73,14 +73,14 @@ export const ProjectDetailPage: React.FC = () => {
         </div>
 
         {/* Back navigation */}
-        <div className="pt-4 flex items-center justify-between border-t border-[#E5EAF1]">
+        <div className="pt-4 flex items-center justify-between border-t border-[#252D3D]">
           <Link
             to="/projects"
-            className="text-sm font-semibold text-[#4169E1] hover:text-[#3154C4] transition-colors"
+            className="text-sm font-semibold text-[#6C8CFF] hover:text-[#8EA5FF] transition-colors"
           >
             ← Back to All Projects
           </Link>
-          <Button href="/contact" variant="dark" size="sm">
+          <Button href="/contact" variant="secondary" size="sm">
             Discuss Architecture ✉
           </Button>
         </div>

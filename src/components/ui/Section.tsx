@@ -24,17 +24,17 @@ export const Section: React.FC<SectionProps> = ({
         {(eyebrow || title || subtitle) && (
           <header className="mb-8">
             {eyebrow && (
-              <p className="font-mono text-xs text-[#4169E1] tracking-wider mb-2">
+              <p className="font-mono text-xs text-[#6C8CFF] tracking-wider mb-2">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
+              <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-[#F3F5F9]">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-2 text-base text-[#64748B] max-w-2xl font-sans leading-relaxed">
+              <p className="mt-2 text-base text-[#A1AABC] max-w-2xl font-sans leading-relaxed">
                 {subtitle}
               </p>
             )}

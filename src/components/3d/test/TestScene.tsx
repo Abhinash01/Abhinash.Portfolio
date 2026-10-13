@@ -29,7 +29,7 @@ export const TestScene: React.FC = () => {
       <mesh ref={meshRef} position={[0, 0, 0]}>
         <boxGeometry args={[1.6, 1.6, 1.6]} />
         <meshStandardMaterial
-          color="#4169E1"
+          color="#6C8CFF"
           roughness={0.3}
           metalness={0.2}
         />
