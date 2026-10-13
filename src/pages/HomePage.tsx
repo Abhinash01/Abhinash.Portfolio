@@ -53,18 +53,18 @@ export const HomePage: React.FC = () => {
                   <span>Interactive 3D Engine Active</span>
                 </span>
                 <span className="text-[#3B4863]">·</span>
-                <span>Kinetic Monolith & Gyroscope</span>
+                <span>Liquid Chrome Sculpture</span>
               </div>
             </div>
 
             {/* Right Column: Expanded Spatial 3D Hero Viewport (Unconstrained) */}
             <div className="lg:col-span-7 xl:col-span-7 w-full flex items-center justify-center relative">
-              <div className="w-full h-[400px] sm:h-[500px] lg:h-[620px] xl:h-[680px] relative overflow-hidden flex items-center justify-center">
+              <div className="w-full h-[400px] sm:h-[500px] lg:h-[640px] xl:h-[700px] relative overflow-hidden flex items-center justify-center">
                 <SceneCanvas
                   className="w-full h-full"
                   cameraPosition={[0, 0, 5.2]}
                   cameraFov={42}
-                  ariaLabel="Kinetic Monolith and Gyroscope 3D Hero Sculpture"
+                  ariaLabel="Interactive Procedural Liquid Chrome Sculpture"
                 >
                   <HeroScene isMobile={isMobile} />
                 </SceneCanvas>

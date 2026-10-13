@@ -5,6 +5,7 @@
 export type GraphicsQualityTier = 'low' | 'medium' | 'high' | 'auto'
 
 export interface HeroScenePreferences {
+  readonly sculptureRotationSpeed: number
   readonly monolithRotationSpeed: number
   readonly ringsRotationSpeed: number
   readonly microSphereCount: number
@@ -40,6 +41,7 @@ export const GRAPHICS_CONFIG: GraphicsPreferences = {
   shadowsEnabled: true,
   respectReducedMotion: true,
   hero: {
+    sculptureRotationSpeed: 0.12,
     monolithRotationSpeed: 0.15,
     ringsRotationSpeed: 0.18,
     microSphereCount: 12,

@@ -2,9 +2,7 @@ import React, { useMemo, useRef, useEffect } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Environment, Lightformer } from '@react-three/drei'
 import { MathUtils, type Group } from 'three'
-import { Monolith } from './Monolith'
-import { OrbitalRings } from './OrbitalRings'
-import { MicroSpheres } from './MicroSpheres'
+import { LiquidChromeSculpture } from './LiquidChromeSculpture'
 import { prefersReducedMotion, hasFinePointer } from '../webglUtils'
 import { GRAPHICS_CONFIG } from '../../../config/graphics'
 
@@ -14,9 +12,10 @@ export interface HeroSceneProps {
 }
 
 /**
- * HeroScene: The Kinetic Monolith & Gyroscope 3D Environment.
- * Central spatial visual feature for the portfolio hero experience.
- * Refined with professional architectural studio lighting, offline procedural reflection rig,
+ * HeroScene: Liquid Chrome Sculpture 3D Environment.
+ * Central visual showcase for the portfolio hero experience.
+ * Features an asymmetrical, procedural flowing metallic ribbon sculpture
+ * illuminated with high-contrast studio softboxes, dark specular reflections,
  * and restrained, pointer-responsive object movement and camera parallax.
  */
 export const HeroScene: React.FC<HeroSceneProps> = ({
@@ -35,11 +34,8 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
     !isMobile &&
     isFinePointer
 
-  // Responsive scale & position (expanded visual presence)
-  const sceneScale = isMobile ? 0.90 : 1.18
-  const sphereCount = isMobile
-    ? GRAPHICS_CONFIG.hero.microSphereCountMobile
-    : GRAPHICS_CONFIG.hero.microSphereCount
+  // Responsive scale: calibrated for balanced prominence without edge clipping
+  const sceneScale = isMobile ? 0.82 : 1.02
   const envResolution = isMobile ? 128 : GRAPHICS_CONFIG.hero.environmentResolution
 
   // Primary interactive sculpture group ref
@@ -53,7 +49,7 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
   const currentCamY = useRef(0)
 
   // Record base camera position
-  const initialCamPos = useRef<[number, number, number]>([0, 0, 5.2])
+  const initialCamPos = useRef<[number, number, number]>([0, 0, 5.0])
 
   useEffect(() => {
     initialCamPos.current = [camera.position.x, camera.position.y, camera.position.z]
@@ -95,7 +91,6 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
 
   // Continuous frame loop interpolation for subtle object tilt and camera parallax
   useFrame((state, delta) => {
-    // Determine target rotation and camera parallax offsets
     let targetRotX = 0
     let targetRotY = 0
     let targetCamX = 0
@@ -137,25 +132,25 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
 
   return (
     <>
-      {/* Studio Reflection Environment: 100% offline procedural softbox rig tuned for dark space */}
+      {/* Studio Reflection Environment: 100% offline procedural softbox rig for liquid chrome */}
       <Environment resolution={envResolution}>
         <Lightformer
           form="rect"
-          intensity={1.8}
+          intensity={2.2}
           position={[0, 6, -2]}
           scale={[10, 5, 1]}
           color="#FFFFFF"
         />
         <Lightformer
           form="rect"
-          intensity={1.1}
+          intensity={1.4}
           position={[-6, 2, 2]}
           scale={[8, 3, 1]}
           color="#6C8CFF"
         />
         <Lightformer
           form="rect"
-          intensity={0.7}
+          intensity={0.9}
           position={[6, -2, 2]}
           scale={[8, 3, 1]}
           color="#8EA5FF"
@@ -169,56 +164,55 @@ export const HeroScene: React.FC<HeroSceneProps> = ({
         />
       </Environment>
 
-      {/* Studio Lighting Rig: Refined architectural illumination for dark cinematic aesthetic */}
+      {/* Studio Lighting Rig: Architectural illumination tailored for metallic chrome curvature */}
       {/* Ambient gradient sky/ground bounce */}
       <hemisphereLight
-        color="#475569"
+        color="#64748B"
         groundColor="#080B12"
-        intensity={0.65}
+        intensity={0.75}
       />
 
       {/* Key directional softbox (Top-Right-Front) */}
       <directionalLight
         position={[5.5, 6.0, 4.5]}
-        intensity={1.85}
+        intensity={2.2}
         color="#F8FAFC"
       />
 
       {/* Fill directional light softening deep self-shadows (Left-Mid-Front) */}
       <directionalLight
         position={[-5.0, 2.0, 3.5]}
-        intensity={0.65}
+        intensity={0.8}
         color="#1E2638"
       />
 
-      {/* Primary Rim light: Electric blue contour separating sculpture from dark void (Top-Back) */}
+      {/* Primary Rim light: Cobalt blue contour separating sculpture from dark void (Top-Back) */}
       <directionalLight
         position={[0.5, 5.0, -5.0]}
-        intensity={1.8}
+        intensity={2.0}
         color="#6C8CFF"
       />
 
       {/* Secondary Rim light: Subtle side edge definition (Left-Back) */}
       <directionalLight
         position={[-4.0, 3.5, -4.0]}
-        intensity={1.0}
+        intensity={1.2}
         color="#8EA5FF"
       />
 
       {/* Soft low bounce light preventing completely lost undersides */}
       <directionalLight
         position={[0, -4.0, 2.0]}
-        intensity={0.25}
+        intensity={0.35}
         color="#141D32"
       />
 
-      {/* Primary Kinetic Monolith & Gyroscope Group (with pointer responsiveness) */}
+      {/* Primary Liquid Chrome Sculpture Group (with pointer responsiveness) */}
       <group ref={interactiveGroupRef} scale={sceneScale} position={[0, 0, 0]}>
-        <Monolith isReducedMotion={isReducedMotion} isMobile={isMobile} />
-        <OrbitalRings isReducedMotion={isReducedMotion} isMobile={isMobile} />
-        <MicroSpheres isReducedMotion={isReducedMotion} count={sphereCount} />
+        <LiquidChromeSculpture isReducedMotion={isReducedMotion} isMobile={isMobile} />
       </group>
     </>
   )
 }
+
 
